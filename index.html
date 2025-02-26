@@ -15,33 +15,65 @@
 
 <body>
     <div class="row">
-        <div class="col-12 d-flex flex-row justify-content-between mt-3">
-            <img src="/imgs/Logo + Text.png" class="ms-5">
-            <nav>
-                <ul class="d-flex gap-5 mt-3 list-unstyled">
-                    <li>Home</li>
-                    <li>Shop</li>
-                    <li>Our Story</li>
-                    <li>Blog</li>
-                    <li>Contact Us</li>
-                </ul>
-            </nav>
-            <div class="icons mt-3 d-flex gap-3">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-bag-shopping"></i>
+        <P id="offertext" class="bg-dark text-light text-center position-relative">sign up and get 20% off your first
+            order. <a class="text-light" href="/pages/login.html"> Sign up
+                now</a><span class="position-absolute" id="close">X</span> </P>
+        <div class="col-12 d-flex flex-row gap-5 mt-2 mb-0 align-items-center">
+            <img id="shopco" src="/imgs/SHOP.CO.png" class="img-fluid">
+            <div id="navToggle" class="navbar-toggler">
+                <i class="fa-solid fa-bars">
+                    <ul class="d-flex flex-column gap-3 mt-3 list-unstyled">
+                        <li>Home</li>
+                        <li>Shop</li>
+                        <li>Our Story</li>
+                        <li>Blog</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </i>
             </div>
-            <button id="LoginButton" class="btn btn-dark">Login</button>
-            <button id="signoutButton" class="btn btn-dark">signout</button>
+            <nav id="navBar" class="nav-fluid d-flex justify-content-between align-items-center">
+                <ul class="d-flex gap-5 mt-3 list-unstyled">
+                    <li>Shop</li>
+                    <li>On Sale</li>
+                    <li>New Arrivals</li>
+                    <li>Brands</li>
+                </ul>
+                <div class="searchbar ms-5">
+                    <input type="search" id="searchbar" class="rounded border border-none"
+                        placeholder="Search for products...">
+                </div>
+            </nav>
+            <div class="cartholder d-flex gap-3 align-items-center">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-user"></i>
+                <div class="accountholder">
+                    <button id="LoginButton" class="btn btn-dark">Login</button>
+                    <button id="signoutButton" class="btn btn-dark">signout</button>
+                </div>
+            </div>
         </div>
         <div id="home-container" class="col-12 position-relative mt-4">
-            <div class="textbox position-absolute">
-                <h2>classic Exclusive</h2>
-                <h1>Women's Collection</h1>
-                <h1>UPTO 40% OFF</h1>
+            <div class="textbox d-flex flex-column">
+                <h1 class="fw-bold">FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+                <p>Browse through our diverse range of meticulously crafted garments, designed<br> to bring out your
+                    individuality and cater to your sense of style.</p>
                 <button id="shopButton" class="btn btn-dark pt-3 pb-3 pe-5 ps-5 mt-5">Shop Now</button>
             </div>
-            <img id="homeImage" class="img-fluid m-auto" src="/imgs/home.png">
+            <img id="homeImage" class="" src="/imgs/home.png">
+            <div id="stats" class="stats d-flex gap-5">
+                <div class="brands">
+                    <h1>200+</h1>
+                    <p>International Brands</p>
+                </div>
+                <div class="products">
+                    <h1>2000+</h1>
+                    <p>High Quality Products</p>
+                </div>
+                <div class="customer">
+                    <h1>30000+</h1>
+                    <p>Happy Customers</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
