@@ -33,8 +33,7 @@ submit.addEventListener("click", async function (e) {
       const data = await response.json();
       console.log("Login successful:", data);
 
-      alert("Login successful!");
-      sessionStorage.setItem("token", JSON.stringify(data.accessToken)); // Store access token in localstorage
+      localStorage.setItem("token", JSON.stringify(data.accessToken)); // Store access token in localstorage
       window.location.href = "http://127.0.0.1:5500/";
     } catch (error) {}
   } else {

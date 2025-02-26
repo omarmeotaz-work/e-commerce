@@ -6,6 +6,11 @@
   margin-right: 20px;
 }
 
+#signoutButton {
+  margin-right: 20px;
+  display: none;
+}
+
 #home-container {
   text-align: center;
 }
