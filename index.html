@@ -4,43 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/homeStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/css/style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+
 </head>
 
 <body>
     <div class="row">
-        <div class="col-md-6">
-            <div class="img-container position-relative">
-                <img id="loginLogoImg" src="/imgs/Logo + Text.png" class="img-fluid">
-                <img id="loginImg" src="/imgs/login.png" class="img-fluid">
+        <div class="col-12 d-flex flex-row justify-content-between mt-3">
+            <img src="/imgs/Logo + Text.png" class="ms-5">
+            <nav>
+                <ul class="d-flex gap-5 mt-3 list-unstyled">
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Our Story</li>
+                    <li>Blog</li>
+                    <li>Contact Us</li>
+                </ul>
+            </nav>
+            <div class="icons mt-3 d-flex gap-3">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
             </div>
+            <button id="LoginButton" class="btn btn-dark">Login</button>
         </div>
-        <div id="loginContainer" class="col-md-6">
-            <div id="loginForm" class="col-md-6 d-flex flex-column position-absolute ">
-                <img src="/imgs/WelcomebackFabiana.png" class="img-fluid w-50">
-                <p id="pleaseLogin">Please login here</p>
-
-                <label for="email">Username</label>
-                <input id="email" type="email" class="rounded p-2 mb-3">
-                <label for="password">Password</label>
-                <input id="password" type="password" class="rounded p-2">
-                <div id="error" class="alert alert-danger mt-3 mb-1">incorrect username or password</div>
-                <input id="loginSubmit" type="submit" value="login" class="rounded bg-dark text-light p-3 mt-5 ">
+        <div id="home-container" class="col-12 position-relative mt-4">
+            <div class="textbox position-absolute">
+                <h2>classic Exclusive</h2>
+                <h1>Women's Collection</h1>
+                <h1>UPTO 40% OFF</h1>
+                <button id="shopButton" class="btn btn-dark pt-3 pb-3 pe-5 ps-5 mt-5">Shop Now</button>
             </div>
+            <img id="homeImage" class="img-fluid m-auto" src="/imgs/home.png">
         </div>
     </div>
-
 </body>
-<script type="module" src="/js/main.js"></script>
-
+<script src="/js/home.js"></script>
 
 </html>

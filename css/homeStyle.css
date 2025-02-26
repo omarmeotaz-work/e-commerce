@@ -1,0 +1,23 @@
+.row {
+  max-width: 100%;
+}
+
+#LoginButton {
+  margin-right: 20px;
+}
+
+#home-container {
+  text-align: center;
+}
+
+#homeImage {
+  max-height: 100vb;
+  max-width: 100%;
+  width: 200vb;
+}
+
+.textbox {
+  left: 10%;
+  top: 40%;
+  text-align: left !important;
+}/*# sourceMappingURL=homeStyle.css.map */
