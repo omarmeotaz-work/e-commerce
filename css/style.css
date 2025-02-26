@@ -1,0 +1,43 @@
+.row {
+  max-width: 212vb;
+}
+
+#pleaseLogin {
+  color: #a4a1aa;
+}
+
+#loginForm {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 40px;
+}
+
+#loginImg {
+  max-height: 100vb;
+  z-index: -1;
+  width: 845px;
+  height: 730px;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  #loginImg {
+    display: none;
+  }
+}
+
+#loginLogoImg {
+  position: absolute;
+  left: 7%;
+  top: 5%;
+}
+
+@media (min-width: 768px) {
+  #loginContainer {
+    position: relative;
+  }
+}
+
+#error {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

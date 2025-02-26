@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="img-container position-relative">
+                <img id="loginLogoImg" src="/imgs/Logo + Text.png" class="img-fluid">
+                <img id="loginImg" src="/imgs/login.png" class="img-fluid">
+            </div>
+        </div>
+        <div id="loginContainer" class="col-md-6">
+            <div id="loginForm" class="col-md-6 d-flex flex-column position-absolute ">
+                <img src="/imgs/WelcomebackFabiana.png" class="img-fluid w-50">
+                <p id="pleaseLogin">Please login here</p>
+
+                <label for="email">Username</label>
+                <input id="email" type="email" class="rounded p-2 mb-3">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="rounded p-2">
+                <div id="error" class="alert alert-danger mt-3 mb-1">incorrect username or password</div>
+                <input id="loginSubmit" type="submit" value="login" class="rounded bg-dark text-light p-3 mt-5 ">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="module" src="/js/main.js"></script>
+
+
+</html>
