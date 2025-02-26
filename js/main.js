@@ -34,7 +34,7 @@ submit.addEventListener("click", async function (e) {
       console.log("Login successful:", data);
 
       alert("Login successful!");
-      localStorage.setItem("token", data.token); // Store token if needed
+      localStorage.setItem("token", data.token); // Store token
     } catch (error) {}
   } else {
     errorMessage.style.display = "block";
