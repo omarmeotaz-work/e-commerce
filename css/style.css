@@ -25,6 +25,11 @@
     display: none;
   }
 }
+@media (min-width: 767px) {
+  #loginImg {
+    height: 767px;
+  }
+}
 
 #loginLogoImg {
   position: absolute;

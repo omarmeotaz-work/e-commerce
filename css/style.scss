@@ -22,6 +22,9 @@
   @media (max-width: 767px) {
     display: none;
   }
+  @media (min-width: 767px) {
+    height: 767px;
+  }
 }
 #loginLogoImg {
   position: absolute;
