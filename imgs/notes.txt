@@ -1,0 +1,14 @@
+use bootstrap to save time
+
+account logo not show up until login
+account logo will make signout appear with dropdown in bootstrap
+brands section will be categories
+new arrivals slice 4 product for sections
+view all to go to products page 
+use image from design
+reviews with slick design and get comments json api
+rating stars from likes in comments json and using bootstrap rating stars
+in filter it will filter by category
+filters will open and close with accordion in bootstrap
+bootstrap tabs to change content by tabs in product
+loaders for loading products
