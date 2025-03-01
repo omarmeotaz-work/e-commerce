@@ -12,6 +12,7 @@ signoutButton.addEventListener(`click`, function () {
   localStorage.removeItem("token");
   loginButton.style.display = "block";
   signoutButton.style.display = "none";
+  accountIcon.style.visibility = "hidden";
 });
 
 accountdropdown.addEventListener("click", function () {
@@ -106,3 +107,21 @@ async function displayReviews() {
   }
 }
 displayReviews();
+
+shopButton = document.getElementById("shopButton");
+shopButton.addEventListener("click", function () {
+  window.location.href = "http://127.0.0.1:5500/pages/products.html";
+});
+
+productImgs1 = document.getElementById("products1");
+productImgs1.addEventListener("click", function () {
+  window.location.href = "http://127.0.0.1:5500/pages/products.html";
+});
+productImgs2 = document.getElementById("products2");
+productImgs2.addEventListener("click", function () {
+  window.location.href = "http://127.0.0.1:5500/pages/products.html";
+});
+categories = document.getElementById("categoryBox");
+categories.addEventListener("click", function () {
+  window.location.href = "http://127.0.0.1:5500/pages/products.html";
+});

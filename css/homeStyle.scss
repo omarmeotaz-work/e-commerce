@@ -27,6 +27,8 @@
   border-radius: 40px !important;
 }
 #account {
+  i {
+  }
   visibility: hidden;
 }
 #LoginButton {
@@ -99,6 +101,7 @@
   color: gold;
 }
 #products1 {
+  cursor: pointer;
   @media (min-width: 1025px) {
     display: flex;
   }
@@ -121,6 +124,7 @@
   }
 }
 #products2 {
+  cursor: pointer;
   @media (min-width: 1025px) {
     display: flex;
   }
@@ -134,6 +138,7 @@
   }
 }
 .categoryBox {
+  cursor: pointer;
   background-color: #f0f0f0;
   img {
     cursor: pointer;

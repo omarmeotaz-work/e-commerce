@@ -36,7 +36,6 @@
 #account {
   visibility: hidden;
 }
-
 #LoginButton {
   margin-right: 20px;
   max-height: -moz-fit-content;
@@ -123,6 +122,9 @@
   color: gold;
 }
 
+#products1 {
+  cursor: pointer;
+}
 @media (min-width: 1025px) {
   #products1 {
     display: flex;
@@ -150,6 +152,9 @@
   border-top: 1px solid #ccc;
 }
 
+#products2 {
+  cursor: pointer;
+}
 @media (min-width: 1025px) {
   #products2 {
     display: flex;
@@ -169,6 +174,7 @@
 }
 
 .categoryBox {
+  cursor: pointer;
   background-color: #f0f0f0;
 }
 .categoryBox img {
