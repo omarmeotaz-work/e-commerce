@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/productdetails.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <P id="offertext" class="col-12 bg-dark text-light text-center position-relative">sign up and get 20% off
+        your
+        first
+        order. <a class="text-light" href="/pages/login.html"> Sign up
+            now</a><span class="position-absolute" id="close">X</span> </P>
+
+    <div class="row">
+        <nav class="navbar navbar-expand-lg ">
+            <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid ms-5"></a>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span></button>
+
+
+            <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
+                id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Shop
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">On Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Brands</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input type="search" id="searchbar" class="rounded border border-none"
+                        placeholder="Search for products...">
+                </form>
+                <button id="LoginButton" class="btn btn-dark">Login</button>
+                <div id="account" class="d-flex gap-3 align-items-center">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-regular fa-user btn" id="dropdownMenuButton" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"></i>
+
+                    <button id="signoutButton" class="btn btn-dark">signout</button>
+                </div>
+            </div>
+        </nav>
+        <div id="line" class="col-10 ms-5 me-5 mt-3 pt-3">
+            <p class="text-secondary">Home <span class="fw-bold">></span></p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-2 ms-5">
+            <img src="/imgs/d-2.png" class="img-fluid">
+            <img src="/imgs/d-3.png" class="img-fluid">
+            <img src="/imgs/d-4.png" class="img-fluid">
+        </div>
+        <div class="col-lg-3 col-6">
+            <img src="/imgs/d-large.png" class="img-fluid">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="fw-bold">One Life Graphic T-shirt</h1>
+            <div id="rating" class="rating mb-1 d-flex">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <p class="text-dark ms-3">4.5/5</p>
+            </div>
+            <h2 id="price" class="fw-bold">$120</h2>
+            <p>This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it
+                offers superior comfort and style.</p>
+            <p>Select Colors</p>
+            <img src="/imgs/colors2.png" class="img-fluid">
+            <p>Choose Size</p>
+            <ul id="sizes" class="list-unstyled gap-3">
+                <li>Small</li>
+                <li>Medium</li>
+                <li id="active">Large</li>
+                <li>X-Large</li>
+            </ul>
+            <div class="row">
+                <ul id="quantity" class="col-2 list-unstyled d-flex justify-content-between ps-2 pe-2 pt-1 pb-1 gap-3">
+                    <li>-</li>
+                    <li>1</li>
+                    <li>+</li>
+                </ul>
+                <button id="addtocart" class="btn btn-dark col-6 ms-5">Add to Cart</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul id="tabs" class=" col-10 d-flex list-unstyled gap-5 ms-5 text-center justify-content-around mt-5">
+                    <li id="detailTab">Product Details</li>
+                    <li id="ratingTab">Ratings and Reviews</li>
+                    <li id="faqTab" class="mb-3">FAQs</li>
+                </ul>
+            </div>
+            <div id="revheader" class="col-12 justify-content-between">
+                <h5 class="m-5">All Reviews <small>(451)</small></h5>
+                <div class="col-3 m-5">
+                    <img src="/imgs/filters.png" class="img-fluid>">
+                    <button id="latest" class="border border-none ms-3 me-2 ps-3 pe-3 pt-2 pb-2">Latest &#11167</button>
+                    <button id="write" class="btn btn-dark ps-4 pe-4 pt-2 pb-2">Write a Review</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="reviewssection" class="row m-auto">
+        <div id="revbox" class="revbox col-lg-5 m-3">
+            <div class="ratingholder d-flex justify-content-between">
+                <div id="rating" class="rating mb-1 d-flex">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p class="fw-bold h3">...</p>
+            </div>
+            <h4 id="reviewer">Samantha D. <i class="fa-solid fa-circle-check"></i></h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel cumque, itaque quaerat ab rerum id
+                omnis inventore. Earum illum doloribus expedita consequuntur fuga impedit nesciunt sint dolorem
+                explicabo animi?</p>
+            <h6>Posted on August 14, 2023</h6>
+        </div>
+        <div id="revbox" class="revbox col-lg-5 m-3">
+            <div class="ratingholder d-flex justify-content-between">
+                <div id="rating" class="rating mb-1 d-flex">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p class="fw-bold h3">...</p>
+            </div>
+            <h4 id="reviewer">Samantha D. <i class="fa-solid fa-circle-check"></i></h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel cumque, itaque quaerat ab rerum id
+                omnis inventore. Earum illum doloribus expedita consequuntur fuga impedit nesciunt sint dolorem
+                explicabo animi?</p>
+            <h6>Posted on August 14, 2023</h6>
+        </div>
+        <div id="revbox" class="revbox col-lg-5 m-3">
+            <div class="ratingholder d-flex justify-content-between">
+                <div id="rating" class="rating mb-1 d-flex">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p class="fw-bold h3">...</p>
+            </div>
+            <h4 id="reviewer">Samantha D. <i class="fa-solid fa-circle-check"></i></h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel cumque, itaque quaerat ab rerum id
+                omnis inventore. Earum illum doloribus expedita consequuntur fuga impedit nesciunt sint dolorem
+                explicabo animi?</p>
+            <h6>Posted on August 14, 2023</h6>
+        </div>
+        <div id="revbox" class="revbox col-lg-5 m-3">
+            <div class="ratingholder d-flex justify-content-between">
+                <div id="rating" class="rating mb-1 d-flex">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p class="fw-bold h3">...</p>
+            </div>
+            <h4 id="reviewer">Samantha D. <i class="fa-solid fa-circle-check"></i></h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel cumque, itaque quaerat ab rerum id
+                omnis inventore. Earum illum doloribus expedita consequuntur fuga impedit nesciunt sint dolorem
+                explicabo animi?</p>
+            <h6>Posted on August 14, 2023</h6>
+        </div>
+        <div id="revbox" class="revbox col-lg-5 m-3">
+            <div class="ratingholder d-flex justify-content-between">
+                <div id="rating" class="rating mb-1 d-flex">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p class="fw-bold h3">...</p>
+            </div>
+            <h4 id="reviewer">Samantha D. <i class="fa-solid fa-circle-check"></i></h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel cumque, itaque quaerat ab rerum id
+                omnis inventore. Earum illum doloribus expedita consequuntur fuga impedit nesciunt sint dolorem
+                explicabo animi?</p>
+            <h6>Posted on August 14, 2023</h6>
+        </div>
+        <div id="revbox" class="revbox col-lg-5 m-3">
+            <div class="ratingholder d-flex justify-content-between">
+                <div id="rating" class="rating mb-1 d-flex">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p class="fw-bold h3">...</p>
+            </div>
+            <h4 id="reviewer">Samantha D. <i class="fa-solid fa-circle-check"></i></h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel cumque, itaque quaerat ab rerum id
+                omnis inventore. Earum illum doloribus expedita consequuntur fuga impedit nesciunt sint dolorem
+                explicabo animi?</p>
+            <h6>Posted on August 14, 2023</h6>
+        </div>
+        <button id="loadbtn" class="col-2 pt-2 pb-2 fw-bold">load more reviews</button>
+    </div>
+
+    <div id="detailsection" class="row">
+        <div class="col-12 m-auto text-center">
+            <h3>Product Description:</h3>
+            <p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea reprehenderit sint minima
+                natus tenetur
+                recusandae distinctio, culpa sequi ex perferendis beatae quae nam enim incidunt quibusdam accusantium
+                harum neque voluptate.</p>
+        </div>
+    </div>
+
+    <div id="FAQsection" class="row">
+        <div class="col-12 m-auto text-center">
+            <h3>Frequently asked question:</h3>
+            <p>Q1: Adipisci tenetur quidem voluptate. Aspernatur sit debitis voluptate amet, quasi a
+                alias veniam eos repellat?</p>
+            <p>A1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque voluptate tenetur corporis,
+                repellendus minima et doloribus. Odit illum excepturi quod consectetur commodi voluptatibus consequuntur
+                quia porro tempora dolorum. Quibusdam, expedita?</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h1 id="alsolike" class="fw-bold text-center mt-5">You Might Also Like</h1>
+            <div class="row justify-content-center">
+                <div class="col-2 m-3">
+                    <img src="/imgs/np-0.png" class="img-fluid mb-2">
+                    <h5 id="productTitle" class="mb-3">polo</h5>
+                    <div id="rating" class="rating d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.0/5</p>
+                    </div>
+                    <h5 id="price">$212</h5>
+                </div>
+                <div class="col-2 m-3">
+                    <img src="/imgs/np-1.png" class="img-fluid mb-2">
+                    <h5 id="productTitle" class="mb-3">polo</h5>
+                    <div id="rating" class="rating d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.0/5</p>
+                    </div>
+                    <h5 id="price">$212</h5>
+                </div>
+                <div class="col-2 m-3">
+                    <img src="/imgs/np-2.png" class="img-fluid mb-2">
+                    <h5 id="productTitle" class="mb-3">polo</h5>
+                    <div id="rating" class="rating d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.0/5</p>
+                    </div>
+                    <h5 id="price">$212</h5>
+                </div>
+                <div class="col-2 m-3">
+                    <img src="/imgs/np-3.png" class="img-fluid mb-2">
+                    <h5 id="productTitle" class="mb-3">polo</h5>
+                    <div id="rating" class="rating d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.0/5</p>
+                    </div>
+                    <h5 id="price">$212</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="footerSection" class="col-12 pt-5">
+        <div id="subform" class="subscribe bg-dark text-light p-5 d-flex justify-content-between m-5">
+            <h1 class="col-md-6">STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS</h1>
+            <form id="subscribeForm" class="col-md-4 d-flex flex-column gap-3">
+                <input type="email" placeholder="Enter your Email Address" class="border border-none">
+                <button class="border border-none">Subscribe to Newsletter</button>
+            </form>
+        </div>
+
+
+        <div id="footer" class="col-12 footer d-flex">
+            <div class="col-3 box ms-5">
+                <h1 class="fw-bold">SHOP.CO</h1>
+                <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+                <div class="social d-flex gap-3 h4">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+            <div class="col-2">
+                <h3>Company</h3>
+                <p>About</p>
+                <p>Features</p>
+                <p>Works</p>
+                <p>Career</p>
+            </div>
+            <div class="col-2">
+                <h3>Help</h3>
+                <p>Customer Support</p>
+                <p>Delivery Details</p>
+                <p>Terms and Conditions</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="col-2">
+                <h3>FAQ</h3>
+                <p>Account</p>
+                <p>Manage Deliveries</p>
+                <p>Orders</p>
+                <p>Payments</p>
+            </div>
+            <div class="col-2">
+                <h3>Resources</h3>
+                <p>Free E-books</p>
+                <p>Development tutorials</p>
+                <p>How to -blog</p>
+                <p>Youtube Playlist</p>
+            </div>
+        </div>
+        <div class="col-12">
+            <div id="rights" class="rights d-flex justify-content-between m-5">
+                <p class="mt-5">Shop.co © 2000-2023, All Rights Reserved</p>
+                <img src="/imgs/credit.png" class="img-fluid mt-5">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="/js/productdetails.js"></script>
+
+</html>

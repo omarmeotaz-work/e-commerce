@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.row {
+  max-width: 100%;
+}
+
+#offertext {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media (max-width: 426px) {
+  #offertext {
+    display: none;
+  }
+}
+
+nav {
+  position: relative;
+}
+
+#line {
+  border-top: 1px solid #ccc;
+}
+
+#close {
+  right: 50px;
+  cursor: pointer;
+}
+
+#shopco {
+  margin-left: 10rem;
+}
+
+#navbarSupportedContent {
+  font-size: 16;
+}
+
+#searchbar {
+  width: 25rem;
+  background-color: #f0f0f0;
+  background-image: url("/imgs/magnifying glass.png");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  padding: 10px;
+  font-size: 16px;
+  padding-left: 40px;
+  border-radius: 40px !important;
+}
+
+#account {
+  visibility: hidden;
+}
+
+#LoginButton {
+  margin-right: 20px;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+#signoutButton {
+  margin-right: 20px;
+  transition: 0.3s;
+  visibility: hidden;
+}
+@media (max-width: 767px) {
+  #signoutButton {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+}
+
+@media (min-width: 769px) {
+  #sizes {
+    display: flex;
+  }
+}
+#sizes li {
+  border-radius: 40px;
+  background-color: #f0f0f0;
+  padding: 1rem 1.5rem 1rem;
+}
+#sizes li#active {
+  background-color: black !important;
+  color: white;
+}
+
+#quantity {
+  background-color: #f0f0f0;
+  max-width: 10rem;
+  border-radius: 40px;
+}
+
+#addtocart {
+  border-radius: 40px;
+}
+
+#tabs {
+  font-size: 20px;
+  border-bottom: 1px solid #ddd;
+}
+#tabs li {
+  cursor: pointer;
+}
+#tabs li:hover {
+  font-weight: bold;
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+#latest {
+  border-radius: 40px;
+}
+
+#write {
+  border-radius: 40px;
+}
+
+#reviewer i {
+  color: green;
+}
+
+#rating {
+  color: gold;
+}
+
+.revbox {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+#loadbtn {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-left: 34rem;
+}
+@media (max-width: 768px) {
+  #loadbtn {
+    display: none;
+  }
+}
+
+#alsolike {
+  font-size: 60px;
+}
+
+#detailsection {
+  display: none;
+}
+
+#revheader {
+  display: flex;
+}
+
+#subscribeForm input {
+  border-radius: 20px;
+  padding: 10px;
+}
+#subscribeForm button {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#subform {
+  border-radius: 20px;
+}
+@media (max-width: 767px) {
+  #subform {
+    flex-direction: column;
+  }
+}
+
+#rights {
+  border-top: 1px solid #ccc;
+}
+
+@media (max-width: 767px) {
+  #footer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #rights {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=productdetails.css.map */

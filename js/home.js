@@ -90,6 +90,9 @@ displayProducts();
 async function displayReviews() {
   let reviewers = document.querySelectorAll(".revbox > h5");
   let reviewertext = document.querySelectorAll(".revbox > p");
+  console.log(reviewers);
+  console.log(reviewertext);
+
   const response = await fetch(
     "https://dummyjson.com/comments?limit=20&skip=20&select=body,postId"
   );

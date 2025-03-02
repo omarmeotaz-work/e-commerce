@@ -1,3 +1,7 @@
+.row {
+  max-width: 100%;
+}
+
 #offertext {
   height: -moz-fit-content;
   height: fit-content;
@@ -64,7 +68,9 @@ nav {
 }
 
 #filtersection {
-  border: 1px solid #ccc;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  border: 1px solid #dddcdc;
 }
 
 .filterhead {
@@ -73,6 +79,7 @@ nav {
 
 #categorylist {
   position: relative;
+  cursor: pointer;
   border-bottom: 1px solid #ccc;
 }
 #categorylist li::after {
@@ -181,6 +188,60 @@ nav {
 #filterbtn {
   border-radius: 40px;
   margin: auto;
+}
+
+#showing {
+  margin-left: 28rem;
+}
+@media (max-width: 768px) {
+  #showing {
+    display: none;
+  }
+}
+
+.product-grid .card {
+  cursor: pointer;
+  margin: 1rem;
+  border: none;
+}
+.product-grid .card #price {
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 0.3fr));
+  }
+}
+.product-grid #productTitle {
+  margin-top: 1rem;
+}
+
+#prevbtn {
+  border-color: #ddd;
+  background-color: #ffffff;
+}
+
+#nextbtn {
+  border-color: #ddd;
+  background-color: #ffffff;
+}
+
+#pagelist {
+  display: flex;
+}
+@media (max-width: 426px) {
+  #pagelist {
+    display: none !important;
+  }
+}
+
+#rating {
+  color: gold;
+}
+
+#activep {
+  background-color: #ccc;
 }
 
 #subscribeForm input {

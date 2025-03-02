@@ -1,3 +1,8 @@
+.row {
+  max-width: 100%;
+}
+body {
+}
 #offertext {
   height: fit-content;
   @media (max-width: 426px) {
@@ -27,8 +32,6 @@
   border-radius: 40px !important;
 }
 #account {
-  i {
-  }
   visibility: hidden;
 }
 #LoginButton {
@@ -144,6 +147,7 @@
     cursor: pointer;
   }
 }
+
 #reviewSection {
   @media (max-width: 767px) {
     display: none;
