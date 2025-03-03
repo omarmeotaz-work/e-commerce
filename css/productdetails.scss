@@ -104,9 +104,15 @@ nav {
 }
 #latest {
   border-radius: 40px;
+  @media (max-width: 426px) {
+    display: none;
+  }
 }
 #write {
   border-radius: 40px;
+  @media (max-width: 426px) {
+    display: none;
+  }
 }
 
 #reviewer {
@@ -121,6 +127,11 @@ nav {
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 2rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 767px) {
+    margin-left: 3rem;
+  }
 }
 #loadbtn {
   background-color: #ffff;
