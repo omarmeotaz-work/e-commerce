@@ -79,46 +79,48 @@
 
 <div class="row">
 
-    <div id="filtersection" class="col-lg-2 rounded ms-5 p-3">
+    <div id="filtersection" class="col-lg-2 col-10 rounded ms-5 p-3">
         <div class="filterhead d-flex justify-content-between pb-3 mb-3">
-            <h3>Filters </h3> <img id="filterImg" src="/imgs/filters.png" class="img-fluid">
+            <h3>Filters </h3> <img id="filterImg" src="/imgs/filters.png" class="img-fluid btn">
         </div>
-        <ul id="categorylist" class="list-unstyled pb-3">
-            <li id="cat1">tshirt</li>
-            <li id="cat2">tshirt</li>
-            <li id="cat3">tshirt</li>
-            <li id="cat4">tshirt</li>
-            <li id="cat5">tshirt</li>
-        </ul>
-        <div class="range">
-            <div class="range-slider">
-                <span class="range-selected"></span>
+        <div id="filtercol" class="filter-collapse">
+            <ul id="categorylist" class="list-unstyled pb-3">
+                <li id="cat1">tshirt</li>
+                <li id="cat2">tshirt</li>
+                <li id="cat3">tshirt</li>
+                <li id="cat4">tshirt</li>
+                <li id="cat5">tshirt</li>
+            </ul>
+            <div class="range">
+                <div class="range-slider">
+                    <span class="range-selected"></span>
+                </div>
+                <div class="range-input">
+                    <input type="range" class="min" min="0" max="1000" value="300" step="10">
+                    <input type="range" class="max" min="0" max="1000" value="700" step="10">
+                </div>
+                <div class="range-price">
+                    <label for="min">Min</label>
+                    <input type="number" name="min" value="300">
+                    <label for="max">Max</label>
+                    <input type="number" name="max" value="700">
+                </div>
             </div>
-            <div class="range-input">
-                <input type="range" class="min" min="0" max="1000" value="300" step="10">
-                <input type="range" class="max" min="0" max="1000" value="700" step="10">
+            <div class="colors pb-4 mt-4">
+                <img src="/imgs/colors.png" class="img-fluid">
             </div>
-            <div class="range-price">
-                <label for="min">Min</label>
-                <input type="number" name="min" value="300">
-                <label for="max">Max</label>
-                <input type="number" name="max" value="700">
+            <div class="size mt-3 pb-3">
+                <img src="/imgs/size.png" class="img-fluid">
             </div>
+            <ul id="dresslist" class="list-unstyled pt-3 pb-3">
+                <h5 id="listhead" class="head fw-bold">Dress Style</h5>
+                <li>casual</li>
+                <li>Formal</li>
+                <li>Party</li>
+                <li>Gym</li>
+            </ul>
+            <button id="filterbtn" class="btn btn-dark ps-5 pe-5">Apply filter</button>
         </div>
-        <div class="colors pb-4 mt-4">
-            <img src="/imgs/colors.png" class="img-fluid">
-        </div>
-        <div class="size mt-3 pb-3">
-            <img src="/imgs/size.png" class="img-fluid">
-        </div>
-        <ul id="dresslist" class="list-unstyled pt-3 pb-3">
-            <h5 id="listhead" class="head fw-bold">Dress Style</h5>
-            <li>casual</li>
-            <li>Formal</li>
-            <li>Party</li>
-            <li>Gym</li>
-        </ul>
-        <button id="filterbtn" class="btn btn-dark ps-5 pe-5">Apply filter</button>
     </div>
     <div id="productsection" class="col-lg-9 ms-5">
         <p id="showing" class="text-secondary text-center">Showing 1-10 of 100 Products <span> Sort by: <span

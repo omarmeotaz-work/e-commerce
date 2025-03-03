@@ -1,5 +1,8 @@
 .row {
   max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 #offertext {
   height: fit-content;
@@ -126,12 +129,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: 768px) {
-      display: none;
-    }
   }
   .range-price label {
     margin-right: 5px;
+    @media (max-height: 1024px) {
+      display: none;
+    }
   }
   .range-price input {
     width: 60px;
