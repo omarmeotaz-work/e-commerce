@@ -104,15 +104,18 @@ nav {
 
 #tabs {
   font-size: 20px;
-  border-bottom: 1px solid #ddd;
 }
 #tabs li {
+  border-bottom: 1px solid #ddd;
   cursor: pointer;
+  padding-bottom: 1rem;
 }
 #tabs li:hover {
   font-weight: bold;
   color: black;
   border-bottom: 2px solid black;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #latest {
@@ -159,6 +162,10 @@ nav {
 
 #revheader {
   display: flex;
+}
+
+#FAQsection {
+  display: none;
 }
 
 #subscribeForm input {
