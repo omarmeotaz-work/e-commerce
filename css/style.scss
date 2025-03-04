@@ -1,5 +1,5 @@
 .row {
-  max-width: 212vb;
+  max-width: 100%;
 }
 
 #pleaseLogin {
@@ -7,17 +7,20 @@
 }
 
 #loginForm {
-  left: 0;
+  left: 23%;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 40px;
+  @media (max-width: 767px) {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 #loginImg {
   max-height: 100vb;
   z-index: -1;
-  width: 845px;
-  height: 730px;
+  width: 100%;
   max-width: 100%;
   @media (max-width: 767px) {
     display: none;
@@ -30,6 +33,12 @@
   position: absolute;
   left: 7%;
   top: 5%;
+  @media (max-width: 767px) {
+    margin-top: 5rem;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 #loginContainer {

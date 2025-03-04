@@ -16,28 +16,29 @@
 </head>
 
 <body>
+
     <div class="row">
-        <P id="offertext" class="col-12 bg-dark text-light text-center position-relative">sign up and get 20% off
+        <P id="offertext" class="col-12 text-light text-center position-relative">sign up and get 20% off
             your
             first
             order. <a class="text-light" href="/pages/login.html"> Sign up
                 now</a><span class="position-absolute" id="close">X</span> </P>
 
-        <nav class="navbar navbar-expand-lg ">
-            <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid ms-5"></a>
+        <nav class="navbar navbar-expand-lg" id="navsection">
+            <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid" id="shopco"></a>
 
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span></button>
 
 
             <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
                 id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav" id="navitems">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Shop
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,12 +64,15 @@
                         placeholder="Search for products...">
                 </form>
                 <button id="LoginButton" class="btn btn-dark">Login</button>
-                <div id="account" class="d-flex gap-3 align-items-center">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-regular fa-user btn" id="dropdownMenuButton" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"></i>
 
-                    <button id="signoutButton" class="btn btn-dark">signout</button>
+                <div id="account" class="dropdown d-flex gap-3 align-items-center ">
+                    <i class="dropdown-toggle fa-regular fa-user btn " id="dropdownMenuButton" type="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item"><i class="fa-solid fa-cart-shopping dropdown-item"></i></a>
+                        <a class="dropdown-item"><button id="signoutButton"
+                                class="btn btn-dark dropdown-item">signout</button></a>
+                    </div>
                 </div>
 
             </div>
@@ -76,24 +80,35 @@
 
         <div id="home-container" class="col-12 position-relative mt-4">
             <div class="textbox d-flex flex-column">
-                <h1 class="fw-bold">FIND CLOTHES<br> THAT MATCHES<br> YOUR STYLE</h1>
+                <h1 id="mainText" class="fw-bold">FIND CLOTHES<br> THAT MATCHES<br> YOUR STYLE</h1>
                 <p id="homeDesc">Browse through our diverse range of meticulously crafted garments, designed<br> to
                     bring out your
                     individuality and cater to your sense of style.</p>
-                <button id="shopButton" class="btn btn-dark pt-3 pb-3 pe-5 ps-5">Shop Now</button>
+                <button id="shopButton" class="btn text-light pt-3 pb-3">Shop Now</button>
+                <div class="stats d-flex gap-5 mt-5">
+                    <div class="stat1 text-center">
+                        <h2>200+ </h2>
+                        <p>International Brands</p>
+                    </div>
+                    <div class="stat2">
+                        <h2>2,000+ </h2>
+                        <p>High-Quality Products</p>
+                    </div>
+                    <div class="stat3">
+                        <h2>30,000+ </h2>
+                        <p>Happy Customers</p>
+                    </div>
+
+                </div>
             </div>
-            <img id="homeImage" class="img-fluid" src="/imgs/homepage.png">
+
 
         </div>
-        <div id="brands" class="col-12 justify-content-between bg-dark text-light pt-3 pb-3">
-            <h1>Beauty</h1>
-            <h1>Fragerance</h1>
-            <h1>Furniture</h1>
-            <h1>Groceries</h1>
-            <h1>Decoration</h1>
+        <div id="brands" class="text-light">
+            <h1></h1>
         </div>
         <div id="arrivals" class="col-12 mt-5 text-center">
-            <h1 class="fw-bold text-center mb-5">New Arrivals</h1>
+            <h1 id="arrivalHeader" class="fw-bold text-center mb-5">New Arrivals</h1>
             <div id="products1" class="col-10">
                 <div class="col-md-3 box ms-5">
                     <img class="img-fluid" src="/imgs/p-1.png">
@@ -155,7 +170,7 @@
             <button id="viewAllButton" class="btn m-auto pe-5 ps-5">View All</button>
         </div>
         <div id="topSelling" class="col-12 mt-5 text-center">
-            <h1 class="fw-bold text-center m-5 pt-5">Top Selling</h1>
+            <h1 id="topsellingHeader" class="fw-bold text-center m-5 pt-5">Top Selling</h1>
             <div id="products2" class="col-10">
                 <div class="col-md-3 box ms-5">
                     <img class="img-fluid" src="/imgs/p-5.png">
@@ -217,8 +232,8 @@
             <button id="viewAllButton" class="btn m-auto pe-5 ps-5">View All</button>
         </div>
         <div class="col-12">
-            <div id="categoryBox" class="categoryBox text-center m-5 rounded">
-                <h1 class="mt-5 pt-3 pb-3 fw-bold">Browse By Category</h1>
+            <div id="categoryBox" class="categoryBox text-center m-5">
+                <h1 id="CategoryHeader" class="mt-5 pt-5 pb-5 fw-bold">Browse By Category</h1>
                 <div class="firstrow">
                     <img src="/imgs/Frame 61.png" class="img-fluid">
                     <img src="/imgs/Frame 62.png" class="img-fluid">
@@ -232,106 +247,13 @@
         <div id="reviewSection" class="col-12">
             <div class="reviews ms-5">
                 <div class="revhead d-flex justify-content-between">
-                    <h1 class="fw-bold mb-4">Our Happy Customers</h1>
+                    <h1 id="reviewHeader" class="fw-bold mb-4">Our Happy Customers</h1>
                     <div class="arrows">
                         <i class="fa-solid fa-arrow-left me-5"></i>
                         <i class="fa-solid fa-arrow-right me-5"></i>
                     </div>
                 </div>
                 <div id="revholder" class="revholder">
-                    <div id="revbox" class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-                    <div class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-                    <div class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-                    <div class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-                    <div class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-                    <div class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-                    <div class="revbox">
-                        <div id="rating" class="rating mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h5>sarah M. <i class="fa-solid fa-circle-check"></i></h5>
-                        <p id="revText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat omnis
-                            dignissimos at accusamus cumque, laboriosam accusantium dolore assumenda culpa corporis,
-                            voluptas quod ea? Molestiae deserunt doloremque facere. Laborum, est.</p>
-                    </div>
-
-
                 </div>
             </div>
         </div>
@@ -396,7 +318,8 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/home.js"></script>
 </body>
-<script src="/js/home.js"></script>
 
 </html>

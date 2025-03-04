@@ -70,9 +70,7 @@ async function displayProducts() {
     return;
   }
   const data = await response.json();
-  console.log(data);
-  console.log(data.products[0].title);
-  console.log(data.products[1].title);
+
   product1.textContent = data.products[0].title;
   product2.textContent = data.products[1].title;
   product3.textContent = data.products[2].title;
@@ -94,28 +92,91 @@ async function displayProducts() {
 displayProducts();
 
 async function displayReviews() {
-  let reviewers = document.querySelectorAll(".revbox > h5");
-  let reviewertext = document.querySelectorAll(".revbox > p");
-  console.log(reviewers);
-  console.log(reviewertext);
+  try {
+    const response = await fetch(
+      "https://dummyjson.com/comments?limit=20&skip=20&select=body,postId"
+    );
+    if (!response.ok) {
+      console.error("There was an error:", response.statusText);
+      return;
+    }
 
-  const response = await fetch(
-    "https://dummyjson.com/comments?limit=20&skip=20&select=body,postId"
-  );
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
-  console.log(data);
-  console.log(reviewers.length);
+    const data = await response.json();
+    const revholder = $("#revholder");
 
-  for (let i = 0; i <= reviewers.length; i++) {
-    reviewers[i].innerHTML = data.comments[i].user.fullName;
-    reviewertext[i].innerHTML = data.comments[i].body;
+    if (data && data.comments) {
+      for (let i = 0; i < data.comments.length; i++) {
+        const comment = data.comments[i];
+        if (!comment) continue;
+
+        const reviewDev = `<div class="revbox">
+            <div id="rating" class="rating mb-1">
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <h5>${comment?.user?.username || "Anonymous"} 
+                <i class="fa-solid fa-circle-check"></i>
+            </h5>
+            <p id="revText">${comment?.body || "No review text available."}</p>
+        </div>`;
+
+        revholder.append(reviewDev);
+      }
+
+      if (revholder.hasClass("slick-initialized")) {
+        revholder.slick("unslick");
+      }
+      revholder.slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        centerMode: true,
+      });
+    }
+  } catch (error) {
+    console.error("Error fetching comments:", error);
   }
 }
 displayReviews();
+
+async function displayBrands() {
+  const brands = document.getElementById("brands");
+  try {
+    const response = await fetch("https://dummyjson.com/products/categories");
+    if (!response.ok) {
+      console.error("There was an error:", response.statusText);
+      return;
+    }
+
+    const data = await response.json();
+
+    if (data) {
+      for (let i = 0; i < data.length; i++) {
+        const brandname = data[i].name;
+        const brandElement = document.createElement("h1");
+        brandElement.textContent = brandname;
+        brands.appendChild(brandElement);
+      }
+
+      if (brands.classList.contains("slick-initialized")) {
+        brands.slick("unslick");
+      }
+      brands.slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      });
+    }
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+  }
+}
+displayBrands();
 
 shopButton = document.getElementById("shopButton");
 shopButton.addEventListener("click", function () {

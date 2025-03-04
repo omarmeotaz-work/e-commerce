@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "integral";
+  src: url(/webfonts/Fontspring-DEMO-integralcf-bold.otf);
+}
+@font-face {
+  font-family: "satoshi";
+  src: url(/webfonts/Satoshi-Black.otf);
+}
+h1 {
+  font-family: "integral";
+}
+
 .row {
   max-width: 100%;
   margin: 0;
@@ -8,6 +20,7 @@
 #offertext {
   height: -moz-fit-content;
   height: fit-content;
+  background-color: black;
 }
 @media (max-width: 426px) {
   #offertext {
@@ -21,7 +34,16 @@
 }
 
 #shopco {
-  margin-left: 10rem;
+  margin-left: 8rem;
+}
+
+#navsection {
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+#navitems {
+  margin-left: -3rem;
 }
 
 #navbarSupportedContent {
@@ -29,7 +51,7 @@
 }
 
 #searchbar {
-  width: 25rem;
+  width: 35rem;
   background-color: #f0f0f0;
   background-image: url("/imgs/magnifying glass.png");
   background-repeat: no-repeat;
@@ -38,10 +60,18 @@
   font-size: 16px;
   padding-left: 40px;
   border-radius: 40px !important;
+  border: none;
+  margin-left: -7rem;
+}
+@media (max-width: 1025px) {
+  #searchbar {
+    width: 15rem;
+  }
 }
 
 #account {
   visibility: hidden;
+  margin-left: -5rem;
 }
 
 #LoginButton {
@@ -53,7 +83,6 @@
 #signoutButton {
   margin-right: 20px;
   transition: 0.3s;
-  visibility: hidden;
 }
 @media (max-width: 767px) {
   #signoutButton {
@@ -64,6 +93,14 @@
 
 #home-container {
   text-align: center;
+  padding: 0;
+}
+@media (min-width: 769px) {
+  #home-container {
+    width: 100%;
+    height: 86vb;
+    background-image: url("/imgs/home.png");
+  }
 }
 
 #homeImage {
@@ -77,22 +114,28 @@
 
 .textbox {
   text-align: center;
-  margin: auto;
+  margin: 5rem;
 }
 @media (min-width: 767px) {
   .textbox {
     max-width: 50%;
-    position: absolute;
-    left: 10%;
-    top: 16%;
     text-align: left !important;
   }
 }
+.textbox #mainText {
+  font-family: "integral";
+  font-size: 46px;
+  margin-bottom: 1rem;
+}
 .textbox #shopButton {
+  background-color: black;
   margin: auto;
   text-align: left;
   margin-left: 0;
   border-radius: 30px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-top: 1rem;
 }
 @media ((max-width: 768px) and (min-width: 426px)) {
   .textbox #shopButton {
@@ -119,11 +162,52 @@
     display: none;
   }
 }
+.textbox .stats h2 {
+  font-family: "satoshi";
+}
+.textbox .stats p {
+  color: #777;
+}
+.textbox .stats .stat2 {
+  position: relative;
+}
+.textbox .stats .stat2::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  border-left: 1px solid #ccc;
+  left: -1.5rem;
+}
+.textbox .stats .stat3 {
+  position: relative;
+}
+.textbox .stats .stat3::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  border-left: 1px solid #ccc;
+  left: -1.5rem;
+}
 
+#brands {
+  background-color: black;
+}
 @media (min-width: 769px) {
   #brands {
     display: flex;
   }
+}
+
+#arrivalHeader {
+  font-family: "integral";
+}
+
+#topsellingHeader {
+  font-family: "integral";
+}
+
+#CategoryHeader {
+  font-family: "integral";
 }
 
 #rating {
@@ -183,10 +267,15 @@
 
 .categoryBox {
   cursor: pointer;
+  border-radius: 40px;
   background-color: #f0f0f0;
 }
 .categoryBox img {
   cursor: pointer;
+}
+
+#reviewHeader {
+  font-family: "integral";
 }
 
 @media (max-width: 767px) {
