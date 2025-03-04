@@ -166,6 +166,8 @@ h1 {
 
 #brands {
   background-color: black;
+  padding-top: 2rem;
+  padding-bottom: 0;
   @media (min-width: 769px) {
     display: flex;
   }

@@ -142,7 +142,7 @@ async function displayReviews() {
 displayReviews();
 
 async function displayBrands() {
-  const brands = document.getElementById("brands");
+  const brands = $("#brands"); // jQuery object
   try {
     const response = await fetch("https://dummyjson.com/products/categories");
     if (!response.ok) {
@@ -152,17 +152,21 @@ async function displayBrands() {
 
     const data = await response.json();
 
-    if (data) {
+    if (data && Array.isArray(data)) {
+      brands.empty(); // Clear previous content before appending new elements
+
+      // Append brand elements inside divs (required for Slick)
       for (let i = 0; i < data.length; i++) {
-        const brandname = data[i].name;
-        const brandElement = document.createElement("h1");
-        brandElement.textContent = brandname;
-        brands.appendChild(brandElement);
+        const brandname = data[i].name; // API returns strings, not objects
+        brands.append(`<div class="brand-item"><h1>${brandname}</h1></div>`);
       }
 
-      if (brands.classList.contains("slick-initialized")) {
+      // Destroy previous slick instance if initialized
+      if (brands.hasClass("slick-initialized")) {
         brands.slick("unslick");
       }
+
+      // Reinitialize slick
       brands.slick({
         infinite: true,
         slidesToShow: 4,
@@ -173,10 +177,14 @@ async function displayBrands() {
       });
     }
   } catch (error) {
-    console.error("Error fetching comments:", error);
+    console.error("Error fetching brands:", error);
   }
 }
-displayBrands();
+
+// Run function after document is ready
+$(document).ready(() => {
+  displayBrands();
+});
 
 shopButton = document.getElementById("shopButton");
 shopButton.addEventListener("click", function () {
