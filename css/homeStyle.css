@@ -353,6 +353,10 @@ h1 {
   }
 }
 
+#rating {
+  color: gold;
+}
+
 .categoryBox {
   cursor: pointer;
   border-radius: 40px;

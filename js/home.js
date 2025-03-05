@@ -194,11 +194,6 @@ async function displayCategory() {
 
 displayCategory();
 
-shopButton = document.getElementById("shopButton");
-shopButton.addEventListener("click", function () {
-  window.location.href = "http://127.0.0.1:5500/pages/products.html";
-});
-
 productImgs1 = document.getElementById("products1");
 productImgs1.addEventListener("click", function () {
   window.location.href = "http://127.0.0.1:5500/pages/products.html";
