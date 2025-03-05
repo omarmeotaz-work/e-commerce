@@ -247,6 +247,10 @@ nav {
   background-color: #ccc;
 }
 
+#footerSection {
+  padding: 0;
+}
+
 #subscribeForm input {
   border-radius: 20px;
   padding: 10px;
@@ -257,7 +261,13 @@ nav {
 }
 
 #subform {
+  background-color: black;
   border-radius: 20px;
+  margin-bottom: -5rem;
+  position: relative;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  z-index: 2;
 }
 @media (max-width: 767px) {
   #subform {
@@ -269,14 +279,46 @@ nav {
   border-top: 1px solid #ccc;
 }
 
+#footer {
+  z-index: -1;
+  background-color: #f0f0f0;
+  padding-top: 10rem;
+  width: 100%;
+}
 @media (max-width: 767px) {
   #footer {
-    display: none !important;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+#footer .social {
+  display: flex;
+}
+@media (max-width: 767px) {
+  #footer .social {
+    text-align: center;
+    display: block;
   }
 }
 
+#rights {
+  z-index: -1;
+  background-color: #f0f0f0;
+  width: 100%;
+  margin: auto;
+}
 @media (max-width: 767px) {
   #rights {
     flex-direction: column;
   }
+}
+#rights p {
+  margin-left: 2rem;
+}
+#rights #cards {
+  margin-right: 5rem;
+}
+
+#rightsection {
+  padding: 0;
 }/*# sourceMappingURL=products.css.map */
