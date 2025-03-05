@@ -11,32 +11,35 @@
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css" />
-    <link rel="stylesheet" href="/css/products.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/products.css">
 
 </head>
-<P id="offertext" class="col-12 bg-dark text-light text-center position-relative">sign up and get 20% off
-    your
-    first
-    order. <a class="text-light" href="/pages/login.html"> Sign up
-        now</a><span class="position-absolute" id="close">X</span> </P>
-<div class="row">
-    <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#"><img id="homelogo" src="/imgs/SHOP.CO.png" class="img-fluid ms-5"></a>
+
+<body>
+
+    <P id="offertext" class="col-12 text-light text-center position-relative">sign up and get 20% off
+        your
+        first
+        order. <a class="text-light" href="/pages/login.html"> Sign up
+            now</a><span class="position-absolute" id="close">X</span> </P>
+
+    <nav class="navbar navbar-expand-lg" id="navsection">
+        <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid" id="shopco"></a>
 
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span></button>
 
 
         <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
             id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav" id="navitems">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Shop
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,266 +65,267 @@
                     placeholder="Search for products...">
             </form>
             <button id="LoginButton" class="btn btn-dark">Login</button>
-            <div id="account" class="d-flex gap-3 align-items-center">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-regular fa-user btn" id="dropdownMenuButton" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false"></i>
 
-                <button id="signoutButton" class="btn btn-dark">signout</button>
+            <div id="account" class="dropdown d-flex gap-3 align-items-center ">
+                <i class="dropdown-toggle fa-regular fa-user btn " id="dropdownMenuButton" type="button"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item"><i class="fa-solid fa-cart-shopping dropdown-item"></i></a>
+                    <a class="dropdown-item"><button id="signoutButton"
+                            class="btn btn-dark dropdown-item">signout</button></a>
+                </div>
             </div>
+
         </div>
     </nav>
-    <div id="line" class="col-10 ms-5 me-5 mt-3 pt-3">
-        <p class="text-secondary">Home <span class="fw-bold">></span></p>
 
-    </div>
-</div>
 
-<div class="row">
+    <div class="row">
 
-    <div id="filtersection" class="col-lg-2 col-10 rounded ms-5 p-3">
-        <div class="filterhead d-flex justify-content-between pb-3 mb-3">
-            <h3>Filters </h3> <img id="filterImg" src="/imgs/filters.png" class="img-fluid btn">
-        </div>
-        <div id="filtercol" class="filter-collapse">
-            <ul id="categorylist" class="list-unstyled pb-3">
-                <li id="cat1">tshirt</li>
-                <li id="cat2">tshirt</li>
-                <li id="cat3">tshirt</li>
-                <li id="cat4">tshirt</li>
-                <li id="cat5">tshirt</li>
-            </ul>
-            <div class="range">
-                <div class="range-slider">
-                    <span class="range-selected"></span>
-                </div>
-                <div class="range-input">
-                    <input type="range" class="min" min="0" max="1000" value="300" step="10">
-                    <input type="range" class="max" min="0" max="1000" value="700" step="10">
-                </div>
-                <div class="range-price">
-                    <label for="min">Min</label>
-                    <input type="number" name="min" value="300">
-                    <label for="max">Max</label>
-                    <input type="number" name="max" value="700">
-                </div>
+        <div id="filtersection" class="col-lg-2 col-10 rounded ms-5 p-3">
+            <div class="filterhead d-flex justify-content-between pb-3 mb-3">
+                <h3>Filters </h3> <img id="filterImg" src="/imgs/filters.png" class="img-fluid btn">
             </div>
-            <div class="colors pb-4 mt-4">
-                <img src="/imgs/colors.png" class="img-fluid">
-            </div>
-            <div class="size mt-3 pb-3">
-                <img src="/imgs/size.png" class="img-fluid">
-            </div>
-            <ul id="dresslist" class="list-unstyled pt-3 pb-3">
-                <h5 id="listhead" class="head fw-bold">Dress Style</h5>
-                <li>casual</li>
-                <li>Formal</li>
-                <li>Party</li>
-                <li>Gym</li>
-            </ul>
-            <button id="filterbtn" class="btn btn-dark ps-5 pe-5">Apply filter</button>
-        </div>
-    </div>
-    <div id="productsection" class="col-lg-9 ms-5">
-        <p id="showing" class="text-secondary text-center">Showing 1-10 of 100 Products <span> Sort by: <span
-                    class="fw-bold text-dark">Most
-                    Popular &#11167</span></span></p>
-        <div class="product-grid">
-            <div class="card">
-                <img src="/imgs/np-1.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
+            <div id="filtercol" class="filter-collapse">
+                <ul id="categorylist" class="list-unstyled pb-3">
+                    <li id="cat1">tshirt</li>
+                    <li id="cat2">tshirt</li>
+                    <li id="cat3">tshirt</li>
+                    <li id="cat4">tshirt</li>
+                    <li id="cat5">tshirt</li>
+                </ul>
+                <div class="range">
+                    <div class="range-slider">
+                        <span class="range-selected"></span>
+                    </div>
+                    <div class="range-input">
+                        <input type="range" class="min" min="0" max="1000" value="300" step="10">
+                        <input type="range" class="max" min="0" max="1000" value="700" step="10">
+                    </div>
+                    <div class="range-price">
+                        <label for="min">Min</label>
+                        <input type="number" name="min" value="300">
+                        <label for="max">Max</label>
+                        <input type="number" name="max" value="700">
+                    </div>
                 </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/np-2.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
+                <div class="colors pb-4 mt-4">
+                    <img src="/imgs/colors.png" class="img-fluid">
                 </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/np-3.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
+                <div class="size mt-3 pb-3">
+                    <img src="/imgs/size.png" class="img-fluid">
                 </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/p-1.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
-                </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/p-2.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
-                </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/p-3.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
-                </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/p-4.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
-                </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/p-5.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
-                </div>
-                <p id="price">$120</p>
-            </div>
-            <div class="card">
-                <img src="/imgs/p-6.png" class="img-fluid">
-                <p id="productTitle" class="fw-bold">product</p>
-                <div id="rating" class="rating mb-1 d-flex">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="text-dark ms-3">4.5/5</p>
-                </div>
-                <p id="price">$120</p>
+                <ul id="dresslist" class="list-unstyled pt-3 pb-3">
+                    <h5 id="listhead" class="head fw-bold">Dress Style</h5>
+                    <li>casual</li>
+                    <li>Formal</li>
+                    <li>Party</li>
+                    <li>Gym</li>
+                </ul>
+                <button id="filterbtn" class="btn btn-dark ps-5 pe-5">Apply filter</button>
             </div>
         </div>
-        <div class="navbuttons d-flex justify-content-between ms-3 me-5">
-            <button id="prevbtn" class="rounded ps-3 pe-3 fw-bold"> &#8592 Previous</button>
-            <ul id="pagelist" class="list-unstyled gap-5">
-                <li id="activep" class="p-2 rounded">1</li>
-                <li class="p-2">2</li>
-                <li class="p-2">3</li>
-                <li class="p-2">...</li>
-                <li class="p-2">7</li>
-                <li class="p-2">8</li>
-                <li class="p-2">9</li>
-            </ul>
-            <button id="nextbtn" class="rounded ps-4 pe-3 me-5 fw-bold">Next &#8594</button>
+        <div id="productsection" class="col-lg-9 ms-4">
+            <p id="showing" class="text-secondary text-center">Showing 1-10 of 100 Products <span> Sort by: <span
+                        class="fw-bold text-dark">Most
+                        Popular &#11167</span></span></p>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="/imgs/np-1.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/np-2.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/np-3.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/p-1.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/p-2.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/p-3.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/p-4.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/p-5.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+                <div class="card">
+                    <img src="/imgs/p-6.png" class="img-fluid">
+                    <p id="productTitle" class="fw-bold">product</p>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <p id="price">$120</p>
+                </div>
+            </div>
+            <div class="navbuttons d-flex justify-content-between ms-3 me-5">
+                <button id="prevbtn" class="rounded ps-3 pe-3 fw-bold"> &#8592 Previous</button>
+                <ul id="pagelist" class="list-unstyled gap-5">
+                    <li id="activep" class="p-2 rounded">1</li>
+                    <li class="p-2">2</li>
+                    <li class="p-2">3</li>
+                    <li class="p-2">...</li>
+                    <li class="p-2">7</li>
+                    <li class="p-2">8</li>
+                    <li class="p-2">9</li>
+                </ul>
+                <button id="nextbtn" class="rounded ps-4 pe-3 me-5 fw-bold">Next &#8594</button>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="footerSection" class="col-12 pt-5">
-    <div id="subform" class="subscribe text-light p-5 d-flex justify-content-between">
-        <h1 class="col-md-6">STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS</h1>
-        <form id="subscribeForm" class="col-md-4 d-flex flex-column gap-3">
-            <input type="email" placeholder="Enter your Email Address" class="border border-none">
-            <button class="border border-none">Subscribe to Newsletter</button>
-        </form>
-    </div>
+    <div id="footerSection" class="col-12 pt-5">
+        <div id="subform" class="subscribe text-light p-5 d-flex justify-content-between">
+            <h1 class="col-md-6">STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS</h1>
+            <form id="subscribeForm" class="col-md-4 d-flex flex-column gap-3">
+                <input type="email" placeholder="Enter your Email Address" class="border border-none">
+                <button class="border border-none">Subscribe to Newsletter</button>
+            </form>
+        </div>
 
-    <div id="footer" class="col-12 footer d-flex">
-        <div class="col-md-3 box ms-5">
-            <h1 class="fw-bold">SHOP.CO</h1>
-            <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
-            <div class="social gap-3 h4">
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-github"></i>
+        <div id="footer" class="col-12 footer d-flex">
+            <div class="col-md-3 box ms-5">
+                <h1 class="fw-bold">SHOP.CO</h1>
+                <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+                <div class="social gap-3 h4">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h3>Company</h3>
+                <p>About</p>
+                <p>Features</p>
+                <p>Works</p>
+                <p>Career</p>
+            </div>
+            <div class="col-md-2">
+                <h3>Help</h3>
+                <p>Customer Support</p>
+                <p>Delivery Details</p>
+                <p>Terms and Conditions</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="col-md-2">
+                <h3>FAQ</h3>
+                <p>Account</p>
+                <p>Manage Deliveries</p>
+                <p>Orders</p>
+                <p>Payments</p>
+            </div>
+            <div class="col-md-2">
+                <h3>Resources</h3>
+                <p>Free E-books</p>
+                <p>Development tutorials</p>
+                <p>How to -blog</p>
+                <p>Youtube Playlist</p>
             </div>
         </div>
-        <div class="col-md-2">
-            <h3>Company</h3>
-            <p>About</p>
-            <p>Features</p>
-            <p>Works</p>
-            <p>Career</p>
-        </div>
-        <div class="col-md-2">
-            <h3>Help</h3>
-            <p>Customer Support</p>
-            <p>Delivery Details</p>
-            <p>Terms and Conditions</p>
-            <p>Privacy Policy</p>
-        </div>
-        <div class="col-md-2">
-            <h3>FAQ</h3>
-            <p>Account</p>
-            <p>Manage Deliveries</p>
-            <p>Orders</p>
-            <p>Payments</p>
-        </div>
-        <div class="col-md-2">
-            <h3>Resources</h3>
-            <p>Free E-books</p>
-            <p>Development tutorials</p>
-            <p>How to -blog</p>
-            <p>Youtube Playlist</p>
+        <div id="rightsection" class="col-12">
+            <div id="rights" class="rights d-flex justify-content-between">
+                <p class="mt-5">Shop.co © 2000-2023, All Rights Reserved</p>
+                <img id="cards" src="/imgs/credit.png" class="img-fluid mt-5">
+            </div>
         </div>
     </div>
-    <div id="rightsection" class="col-12">
-        <div id="rights" class="rights d-flex justify-content-between">
-            <p class="mt-5">Shop.co © 2000-2023, All Rights Reserved</p>
-            <img id="cards" src="/imgs/credit.png" class="img-fluid mt-5">
-        </div>
-    </div>
-</div>
-
-<body>
 
 
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/products.js"></script>
 </body>
-<script src="/js/products.js"></script>
 
 </html>

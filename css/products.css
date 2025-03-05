@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "integral";
+  src: url(/webfonts/Fontspring-DEMO-integralcf-bold.otf);
+}
+@font-face {
+  font-family: "satoshi";
+  src: url(/webfonts/Satoshi-Black.otf);
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+
+h1 {
+  font-family: "integral";
+}
+
 .row {
   max-width: 100%;
   margin: 0;
@@ -8,6 +26,7 @@
 #offertext {
   height: -moz-fit-content;
   height: fit-content;
+  background-color: black;
 }
 @media (max-width: 426px) {
   #offertext {
@@ -15,29 +34,36 @@
   }
 }
 
-nav {
-  position: relative;
-}
-
-#line {
-  border-top: 1px solid #ccc;
-}
-
 #close {
   right: 50px;
   cursor: pointer;
 }
 
-#shopco {
-  margin-left: 10rem;
+@media (min-width: 321px) {
+  #shopco {
+    margin-left: 8rem;
+  }
+}
+
+#navsection {
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+#navitems {
+  margin-left: -3rem;
 }
 
 #navbarSupportedContent {
   font-size: 16;
 }
 
+.navbar-toggler {
+  margin: auto;
+}
+
 #searchbar {
-  width: 25rem;
+  width: 35rem;
   background-color: #f0f0f0;
   background-image: url("/imgs/magnifying glass.png");
   background-repeat: no-repeat;
@@ -46,10 +72,18 @@ nav {
   font-size: 16px;
   padding-left: 40px;
   border-radius: 40px !important;
+  border: none;
+  margin-left: -7rem;
+}
+@media (max-width: 1025px) {
+  #searchbar {
+    width: 15rem;
+  }
 }
 
 #account {
   visibility: hidden;
+  margin-left: -5rem;
 }
 
 #LoginButton {
@@ -61,7 +95,6 @@ nav {
 #signoutButton {
   margin-right: 20px;
   transition: 0.3s;
-  visibility: hidden;
 }
 @media (max-width: 767px) {
   #signoutButton {

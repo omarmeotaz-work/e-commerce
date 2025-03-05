@@ -11,10 +11,6 @@ closeoffer.addEventListener("click", function () {
   offer.style.display = "none";
 });
 
-homelogo.addEventListener("click", function () {
-  window.location.href = "http://127.0.0.1:5500/";
-});
-
 loginButton.addEventListener(`click`, function () {
   window.location.href = "http://127.0.0.1:5500/pages/login.html";
 });
@@ -39,7 +35,6 @@ function isLoggedIN() {
 }
 
 isLoggedIN();
-const revholder = document.getElementById("revholder");
 
 //double range slider
 let rangeMin = 100;
