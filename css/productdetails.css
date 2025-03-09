@@ -206,9 +206,9 @@ nav {
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  transform: translateX(-25%);
+  transform: translateX(-15%);
 }
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   #loadbtn {
     transform: translateX(-5%);
   }
@@ -273,6 +273,12 @@ nav {
   padding-top: 10rem;
   width: 100%;
 }
+@media (min-width: 769px) {
+  #footer {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+}
 @media (max-width: 767px) {
   #footer {
     flex-direction: column;
@@ -286,6 +292,12 @@ nav {
   #footer .social {
     text-align: center;
     display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  #footer1 {
+    margin-left: 3rem;
   }
 }
 

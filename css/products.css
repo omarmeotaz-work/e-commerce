@@ -353,6 +353,12 @@ h1 {
   padding-top: 10rem;
   width: 100%;
 }
+@media (min-width: 769px) {
+  #footer {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+}
 @media (max-width: 767px) {
   #footer {
     flex-direction: column;
@@ -366,6 +372,12 @@ h1 {
   #footer .social {
     text-align: center;
     display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  #footer1 {
+    margin-left: 3rem;
   }
 }
 

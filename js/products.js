@@ -3,12 +3,16 @@ const signoutButton = document.getElementById("signoutButton");
 const accountIcon = document.getElementById("account");
 const accountdropdown = document.getElementById("dropdownMenuButton");
 const accessToken = JSON.parse(localStorage.getItem("token"));
-const homelogo = document.getElementById("homelogo");
+const homelogo = document.getElementById("shopco");
 const closeoffer = document.getElementById("close");
 const offer = document.getElementById("offertext");
 
 closeoffer.addEventListener("click", function () {
   offer.style.display = "none";
+});
+
+homelogo.addEventListener("click", function () {
+  window.location.href = "http://127.0.0.1:5500/";
 });
 
 loginButton.addEventListener(`click`, function () {
