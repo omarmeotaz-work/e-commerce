@@ -25,6 +25,14 @@ body {
   }
 }
 
+#navsection {
+  margin: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 nav {
   position: relative;
 }
@@ -78,6 +86,12 @@ nav {
     max-height: -moz-fit-content;
     max-height: fit-content;
   }
+}
+
+#home {
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  color: #666;
 }
 
 @media (min-width: 769px) {

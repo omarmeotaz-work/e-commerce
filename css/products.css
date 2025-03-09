@@ -48,6 +48,8 @@ h1 {
 #navsection {
   margin: 1rem;
   margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #navitems {
@@ -63,7 +65,7 @@ h1 {
 }
 
 #searchbar {
-  width: 35rem;
+  width: 30rem;
   background-color: #f0f0f0;
   background-image: url("/imgs/magnifying glass.png");
   background-repeat: no-repeat;
@@ -103,10 +105,27 @@ h1 {
   }
 }
 
+#home {
+  margin-left: 5rem;
+  color: #666;
+}
+
 #filtersection {
   max-height: -moz-fit-content;
   max-height: fit-content;
   border: 1px solid #dddcdc;
+  margin: auto;
+  margin-top: 1rem;
+}
+@media (min-width: 1440px) {
+  #filtersection {
+    margin-left: 7rem;
+  }
+}
+@media (min-width: 1024px) {
+  #filtersection {
+    margin-left: 5rem;
+  }
 }
 
 .filterhead {
@@ -235,6 +254,10 @@ h1 {
   }
 }
 
+#productsection {
+  margin: auto;
+}
+
 .product-grid .card {
   cursor: pointer;
   margin: 1rem;
@@ -265,6 +288,18 @@ h1 {
 
 #pagelist {
   display: flex;
+}
+@media (min-width: 1440px) {
+  #pagelist {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  #pagelist {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
 }
 @media (max-width: 426px) {
   #pagelist {

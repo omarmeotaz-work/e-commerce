@@ -18,6 +18,13 @@ body {
     display: none;
   }
 }
+#navsection {
+  margin: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgb(0, 0, 0, 10%);
+}
 nav {
   position: relative;
 }
@@ -61,6 +68,11 @@ nav {
   @media (max-width: 767px) {
     max-height: fit-content;
   }
+}
+#home {
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  color: #666;
 }
 
 #sizes {

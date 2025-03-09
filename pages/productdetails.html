@@ -20,63 +20,64 @@
         order. <a class="text-light" href="/pages/login.html"> Sign up
             now</a><span class="position-absolute" id="close">X</span> </P>
 
-    <div class="row">
-        <nav class="navbar navbar-expand-lg ">
-            <a class="navbar-brand" href="#"><img id="homelogo" src="/imgs/SHOP.CO.png" class="img-fluid ms-5"></a>
+    <nav class="navbar navbar-expand-lg" id="navsection">
+        <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid" id="shopco"></a>
 
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span></button>
 
 
-            <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
-                id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Shop
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">On Sale</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">New Arrivals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Brands</a>
-                    </li>
-                </ul>
+        <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
+            id="navbarSupportedContent">
+            <ul class="navbar-nav" id="navitems">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">On Sale</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Arrivals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Brands</a>
+                </li>
+            </ul>
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input type="search" id="searchbar" class="rounded border border-none"
-                        placeholder="Search for products...">
-                </form>
-                <button id="LoginButton" class="btn btn-dark">Login</button>
-                <div id="account" class="d-flex gap-3 align-items-center">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-regular fa-user btn" id="dropdownMenuButton" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"></i>
+            <form class="form-inline my-2 my-lg-0">
+                <input type="search" id="searchbar" class="rounded border border-none"
+                    placeholder="Search for products...">
+            </form>
+            <button id="LoginButton" class="btn btn-dark">Login</button>
 
-                    <button id="signoutButton" class="btn btn-dark">signout</button>
+            <div id="account" class="dropdown d-flex gap-3 align-items-center ">
+                <i class="dropdown-toggle fa-regular fa-user btn " id="dropdownMenuButton" type="button"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item"><i class="fa-solid fa-cart-shopping dropdown-item"></i></a>
+                    <a class="dropdown-item"><button id="signoutButton"
+                            class="btn btn-dark dropdown-item">signout</button></a>
                 </div>
             </div>
-        </nav>
-        <div id="line" class="col-10 ms-5 me-5 mt-3 pt-3">
-            <p class="text-secondary">Home <span class="fw-bold">></span></p>
+
         </div>
-    </div>
+    </nav>
 
 
     <div class="row">
+        <p id="home">Home > shop > Men > T-shirts</p>
+
         <div class="col-2 ms-5">
             <img src="/imgs/d-2.png" class="img-fluid">
             <img src="/imgs/d-3.png" class="img-fluid">
@@ -137,7 +138,7 @@
         </div>
     </div>
 
-    <div id="reviewssection" class="row m-auto">
+    <div id="reviewssection" class="row">
         <div id="revbox" class="revbox col-lg-5">
             <div class="ratingholder d-flex justify-content-between">
                 <div id="rating" class="rating mb-1 d-flex">
@@ -240,7 +241,7 @@
                 explicabo animi?</p>
             <h6>Posted on August 14, 2023</h6>
         </div>
-        <button id="loadbtn" class="col-2 pt-2 pb-2 fw-bold">load more reviews</button>
+        <button id="loadbtn" class="btn btn-light m-auto col-2">Load More Reviews</button>
     </div>
 
     <div id="detailsection" class="row">

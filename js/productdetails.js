@@ -3,7 +3,7 @@ const signoutButton = document.getElementById("signoutButton");
 const accountIcon = document.getElementById("account");
 const accountdropdown = document.getElementById("dropdownMenuButton");
 const accessToken = JSON.parse(localStorage.getItem("token"));
-const homelogo = document.getElementById("homelogo");
+const homelogo = document.getElementById("shopco");
 const closeoffer = document.getElementById("close");
 const offer = document.getElementById("offertext");
 
@@ -98,7 +98,7 @@ const FAQsection = document.getElementById("FAQsection");
 detailTab.addEventListener(`click`, function () {
   detailsection.style.display = "block";
   reviewssection.style.display = "none";
-  revheader.style.display = "none !important";
+  revheader.style.display = "none";
   FAQsection.style.display = "none";
 });
 ratingTab.addEventListener(`click`, function () {
