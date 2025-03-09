@@ -94,6 +94,10 @@ nav {
   color: #666;
 }
 
+#mainImg {
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 769px) {
   #sizes {
     display: flex;
@@ -168,7 +172,7 @@ nav {
   margin-bottom: 2rem;
   margin-left: 4rem;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .revbox {
     margin-left: 3rem;
     max-width: 88%;
