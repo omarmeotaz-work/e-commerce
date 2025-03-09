@@ -140,18 +140,34 @@ nav {
   border-radius: 20px;
   padding: 2rem;
   margin-bottom: 2rem;
-
-  @media (min-width: 767px) {
+  margin-left: 4rem;
+  @media (max-width: 767px) {
     margin-left: 3rem;
+    max-width: 88%;
+  }
+  @media (max-width: 426px) {
+    margin-left: 3rem;
+    max-width: 80%;
   }
 }
 #loadbtn {
   background-color: #ffff;
   border: 1px solid #ddd;
-  border-radius: 20px;
+  border-radius: 40px;
   margin-left: 34rem;
+  max-width: fit-content;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transform: translateX(-25%);
+
+  @media (min-width: 1024px) {
+    transform: translateX(-5%);
+  }
   @media (max-width: 768px) {
-    display: none;
+    transform: none;
   }
 }
 #alsolike {

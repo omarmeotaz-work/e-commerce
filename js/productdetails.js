@@ -70,7 +70,7 @@ async function displayProducts() {
   const prices = document.querySelectorAll("#price");
   console.log(products);
   const response = await fetch(
-    "https://dummyjson.com/products?limit=10&skip=10&select=title,price"
+    "https://dummyjson.com/products?limit=10&skip=2&select=title,price"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
