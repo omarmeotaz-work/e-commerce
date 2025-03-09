@@ -36,7 +36,9 @@ nav {
   cursor: pointer;
 }
 #shopco {
-  margin-left: 10rem;
+  @media (min-width: 676px) {
+    margin-left: 10rem;
+  }
 }
 #navbarSupportedContent {
   font-size: 16;
@@ -74,8 +76,16 @@ nav {
   margin-bottom: 2rem;
   color: #666;
 }
+#sideImgs {
+  img {
+    margin-bottom: 1rem;
+  }
+}
 #mainImg {
   margin-bottom: 1rem;
+  img {
+    height: -webkit-fill-available;
+  }
 }
 
 #sizes {

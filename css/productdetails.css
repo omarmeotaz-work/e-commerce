@@ -46,8 +46,10 @@ nav {
   cursor: pointer;
 }
 
-#shopco {
-  margin-left: 10rem;
+@media (min-width: 676px) {
+  #shopco {
+    margin-left: 10rem;
+  }
 }
 
 #navbarSupportedContent {
@@ -94,8 +96,15 @@ nav {
   color: #666;
 }
 
+#sideImgs img {
+  margin-bottom: 1rem;
+}
+
 #mainImg {
   margin-bottom: 1rem;
+}
+#mainImg img {
+  height: -webkit-fill-available;
 }
 
 @media (min-width: 769px) {
