@@ -139,7 +139,7 @@ async function displayBrands() {
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 3,
-        arrows: true,
+        arrows: false,
         autoplay: true,
         autoplaySpeed: 3000,
       });
@@ -212,8 +212,3 @@ productImgs2 = document.getElementById("products2");
 productImgs2.addEventListener("click", function () {
   window.location.href = "http://127.0.0.1:5500/pages/products.html";
 });
-
-nextarrow = document.getElementsByClassName("slick-next slick-arrow");
-prevarrow = document.querySelector("slick-prev slick-arrow");
-
-console.log(nextarrow);
