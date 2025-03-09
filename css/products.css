@@ -254,6 +254,18 @@ h1 {
   }
 }
 
+#filterbtn {
+  margin: auto;
+}
+@media (min-width: 1440px) {
+  #filterbtn {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+}
+
 #productsection {
   margin: auto;
 }
@@ -352,11 +364,12 @@ h1 {
   background-color: #f0f0f0;
   padding-top: 10rem;
   width: 100%;
+  max-width: 100%;
 }
 @media (min-width: 769px) {
   #footer {
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
   }
 }
 @media (max-width: 767px) {

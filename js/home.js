@@ -190,6 +190,16 @@ counter();
 
 async function displayCategory() {
   const categroyText = document.querySelectorAll("#Categorytext");
+  const response = await fetch("https://dummyjson.com/products/categories");
+  if (!response.ok) {
+    console.error("There was an error:", res.statusText);
+    return;
+  }
+  const data = await response.json();
+  console.log(data);
+  for (let i = 0; i <= categroyText.length; i++) {
+    categroyText[i].textContent = data[i].name;
+  }
 }
 
 displayCategory();
