@@ -379,6 +379,7 @@ h1 {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
   margin-top: 1.5rem;
+  padding-bottom: 4rem;
 }
 @media (min-width: 768px) {
   .categoryBox .secondrow h3 {

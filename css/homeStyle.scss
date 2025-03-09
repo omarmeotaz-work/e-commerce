@@ -317,6 +317,7 @@ h1 {
     justify-content: center;
     column-gap: 1rem;
     margin-top: 1.5rem;
+    padding-bottom: 4rem;
     & h3 {
       @media (min-width: 768px) {
         text-align: left;
@@ -368,6 +369,7 @@ h1 {
     display: none;
   }
 }
+
 .revbox {
   border: 1px solid #ccc;
   border-radius: 14px;
