@@ -111,7 +111,9 @@ async function displayProducts() {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
 
-    const products = `<div class="card">
+    const products = `
+    <a href = "/pages/productdetails.html">
+    <div class="card">
                         <img src="/imgs/np-1.png" class="img-fluid">
                         <p id="productTitle" class="fw-bold">${ProductTitle}</p>
                         <div id="rating" class="rating d-flex">
@@ -123,7 +125,8 @@ async function displayProducts() {
                             <p class="text-dark ms-3">4.5/5</p>
                         </div>
                         <p id="price">$ ${ProductPrice}</p>
-                    </div>`;
+                    </div>
+                    </a>`;
 
     productGrid.innerHTML += products;
   }

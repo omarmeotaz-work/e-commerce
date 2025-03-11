@@ -35,15 +35,10 @@ function isLoggedIN() {
 
 isLoggedIN();
 
-async function displayProducts() {
-  let products = document.querySelectorAll("#pTitle");
-
-  let productprices = document.querySelectorAll("#pPrices");
-  console.log(products);
-  console.log(productprices);
-
+async function displayProducts1() {
+  const prodholder = document.getElementById("products1");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=8&skip=8&select=title,price"
+    "https://dummyjson.com/products?limit=4&skip=2&select=title,price"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -52,11 +47,67 @@ async function displayProducts() {
   const data = await response.json();
   const productdata = data.products;
   for (let i = 0; i <= productdata.length; i++) {
-    products[i].textContent = productdata[i]?.title;
-    productprices[i].textContent = productdata[i]?.price;
+    const ProductTitle = productdata[i].title;
+    const ProductPrice = productdata[i].price;
+    const products = `    <div class="box">
+                    <img class="img-fluid" src="/imgs/p-1.png">
+                    <p id="pTitle" class="fw-bold mt-3 mb-1">${ProductTitle}</p>
+                    <div id="rating" class="rating mb-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p id="pPrices" class="price fw-bold">
+                        $${ProductPrice}
+                    </p>
+                </div>
+`;
+    prodholder.innerHTML += products;
+    // products[i].textContent = data.products[i].title;
+    // prices[i].textContent = data.products[i].price;
   }
 }
-displayProducts();
+
+displayProducts1();
+
+async function displayProducts2() {
+  const prodholder2 = document.getElementById("products2");
+  const response = await fetch(
+    "https://dummyjson.com/products?limit=4&skip=6&select=title,price"
+  );
+  if (!response.ok) {
+    console.error("There was an error:", res.statusText);
+    return;
+  }
+  const data = await response.json();
+  const productdata = data.products;
+  for (let i = 0; i <= productdata.length; i++) {
+    const ProductTitle = productdata[i].title;
+    const ProductPrice = productdata[i].price;
+    const products = `    <div class="box">
+                    <img class="img-fluid" src="/imgs/p-1.png">
+                    <p id="pTitle" class="fw-bold mt-3 mb-1">${ProductTitle}</p>
+                    <div id="rating" class="rating mb-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p id="pPrices" class="price fw-bold">
+                        $${ProductPrice}
+                    </p>
+                </div>
+`;
+    prodholder2.innerHTML += products;
+    // products[i].textContent = data.products[i].title;
+    // prices[i].textContent = data.products[i].price;
+  }
+}
+
+displayProducts2();
 
 async function displayReviews() {
   try {
