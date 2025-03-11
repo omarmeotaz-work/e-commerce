@@ -6,10 +6,6 @@
   font-family: "satoshi";
   src: url(/webfonts/Satoshi-Black.otf);
 }
-* {
-  overflow-x: hidden;
-}
-
 a {
   color: inherit;
   text-decoration: inherit;

@@ -95,9 +95,7 @@ async function categoryList() {
 categoryList();
 
 async function displayProducts() {
-  const products = document.querySelectorAll("#productTitle");
-  const prices = document.querySelectorAll("#price");
-  console.log(products);
+  const productGrid = document.getElementById("product-grid");
   const response = await fetch(
     "https://dummyjson.com/products?limit=10&skip=10&select=title,price"
   );
@@ -106,10 +104,28 @@ async function displayProducts() {
     return;
   }
   const data = await response.json();
-  console.log(data);
-  for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i].title;
-    prices[i].textContent = data.products[i].price;
+  const productdata = data.products;
+  console.log(productdata);
+
+  for (let i = 0; i < productdata.length; i++) {
+    const ProductTitle = productdata[i].title;
+    const ProductPrice = productdata[i].price;
+
+    const products = `<div class="card">
+                        <img src="/imgs/np-1.png" class="img-fluid">
+                        <p id="productTitle" class="fw-bold">${ProductTitle}</p>
+                        <div id="rating" class="rating d-flex">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <p class="text-dark ms-3">4.5/5</p>
+                        </div>
+                        <p id="price">$ ${ProductPrice}</p>
+                    </div>`;
+
+    productGrid.innerHTML += products;
   }
 }
 
