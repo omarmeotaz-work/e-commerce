@@ -245,6 +245,7 @@ h1 {
       font-weight: bold;
     }
   }
+
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(3, minmax(150px, 0.3fr));
@@ -253,6 +254,9 @@ h1 {
   #productTitle {
     margin-top: 1rem;
   }
+}
+small {
+  display: none;
 }
 #prevbtn {
   border-color: #ddd;

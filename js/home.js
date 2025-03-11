@@ -38,7 +38,7 @@ isLoggedIN();
 async function displayProducts1() {
   const prodholder = document.getElementById("products1");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=2&select=title,price"
+    "https://dummyjson.com/products?limit=4&skip=2&select=title,price,thumbnail"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -49,8 +49,10 @@ async function displayProducts1() {
   for (let i = 0; i <= productdata.length; i++) {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
+    const Productimg = productdata[i].thumbnail;
+
     const products = `    <div class="box">
-                    <img class="img-fluid" src="/imgs/p-1.png">
+                    <img class="img-fluid" src=${Productimg}>
                     <p id="pTitle" class="fw-bold mt-3 mb-1">${ProductTitle}</p>
                     <div id="rating" class="rating mb-1">
                         <i class="fa-solid fa-star"></i>
@@ -75,7 +77,7 @@ displayProducts1();
 async function displayProducts2() {
   const prodholder2 = document.getElementById("products2");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=6&select=title,price"
+    "https://dummyjson.com/products?limit=4&skip=6&select=title,price,thumbnail"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -86,8 +88,10 @@ async function displayProducts2() {
   for (let i = 0; i <= productdata.length; i++) {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
+    const Productimg = productdata[i].thumbnail;
+
     const products = `    <div class="box">
-                    <img class="img-fluid" src="/imgs/p-1.png">
+                    <img class="img-fluid" src=${Productimg}>
                     <p id="pTitle" class="fw-bold mt-3 mb-1">${ProductTitle}</p>
                     <div id="rating" class="rating mb-1">
                         <i class="fa-solid fa-star"></i>
@@ -153,7 +157,34 @@ async function displayReviews() {
         arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
-        centerMode: true,
+        centerMode: true, // Keep items centered
+        centerPadding: "0px", // Prevent extra spacing
+        variableWidth: false, // Prevents incorrect width calculations
+        adaptiveHeight: true,
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       });
     }
   } catch (error) {
@@ -195,6 +226,7 @@ async function displayBrands() {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 3000,
+        mobileFirst: true,
       });
     }
   } catch (error) {

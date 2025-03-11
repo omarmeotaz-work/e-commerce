@@ -87,7 +87,6 @@ async function categoryList() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   for (let i = 0; i <= categoryList.length; i++) {
     categoryList[i].textContent = data[i].name;
   }
@@ -97,7 +96,7 @@ categoryList();
 async function displayProducts() {
   const productGrid = document.getElementById("product-grid");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=9&skip=10&select=title,price"
+    "https://dummyjson.com/products?limit=9&skip=10&select=title,price,thumbnail"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -105,16 +104,18 @@ async function displayProducts() {
   }
   const data = await response.json();
   const productdata = data.products;
-  console.log(productdata);
 
   for (let i = 0; i < productdata.length; i++) {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
+    const Productimg = productdata[i].thumbnail;
 
     const products = `
-    <a href = "/pages/productdetails.html">
-    <div class="card">
-                        <img src="/imgs/np-1.png" class="img-fluid">
+    <div class="card"   data-id="${i}" 
+    data-title="${ProductTitle}" 
+    data-price="${ProductPrice}" 
+    data-img="${Productimg}">
+                        <img id ="prodIMG" src=${Productimg} class="img-fluid">
                         <p id="productTitle" class="fw-bold">${ProductTitle}</p>
                         <div id="rating" class="rating d-flex">
                             <i class="fa-solid fa-star"></i>
@@ -126,7 +127,8 @@ async function displayProducts() {
                         </div>
                         <p id="price">$ ${ProductPrice}</p>
                     </div>
-                    </a>`;
+                     <small id ="cardID">${i}<small>
+                    `;
 
     productGrid.innerHTML += products;
   }
@@ -144,7 +146,6 @@ cat5.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
   for (let i = 0; i <= products.length; i++) {
@@ -162,7 +163,6 @@ cat4.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
   for (let i = 0; i <= products.length; i++) {
@@ -180,7 +180,6 @@ cat3.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
   for (let i = 0; i <= products.length; i++) {
@@ -198,7 +197,6 @@ cat2.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
   for (let i = 0; i <= products.length; i++) {
@@ -217,7 +215,6 @@ cat1.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
   for (let i = 0; i <= products.length; i++) {
@@ -226,10 +223,19 @@ cat1.addEventListener(`click`, async function displaycat() {
   }
 });
 
-const productcards = document.querySelectorAll(".card");
+//get prodictpage html
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", function (event) {
+    let card = event.target.closest(".card");
+    if (!card) return; // Exit if not clicking a product card
 
-for (let i = 0; i <= productcards.length; i++) {
-  productcards[i].addEventListener("click", function () {
-    window.location.href = "http://127.0.0.1:5500/pages/productdetails.html";
+    const productId = card.getAttribute("data-id");
+    const productTitle = card.getAttribute("data-title");
+    const productPrice = card.getAttribute("data-price");
+    const productImg = card.getAttribute("data-img");
+
+    window.location.href = `productdetails.html?id=${productId}&title=${encodeURIComponent(
+      productTitle
+    )}&price=${productPrice}&img=${encodeURIComponent(productImg)}`;
   });
-}
+});

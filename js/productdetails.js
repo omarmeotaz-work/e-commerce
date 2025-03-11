@@ -151,8 +151,21 @@ async function displaydetail() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   description.textContent = data.description;
 }
 
 displaydetail();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productTitle = urlParams.get("title");
+  const productPrice = urlParams.get("price");
+  const productImg = urlParams.get("img");
+
+  if (productTitle) {
+    document.getElementById("product-name").textContent = productTitle;
+    document.getElementById("price").textContent = `$${productPrice}`;
+    document.getElementById("product-image").src = productImg;
+    document.getElementById("product-image").alt = productTitle;
+  }
+});
