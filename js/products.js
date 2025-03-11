@@ -97,7 +97,7 @@ categoryList();
 async function displayProducts() {
   const productGrid = document.getElementById("product-grid");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=10&skip=10&select=title,price"
+    "https://dummyjson.com/products?limit=9&skip=10&select=title,price"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
