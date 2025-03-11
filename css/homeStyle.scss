@@ -35,9 +35,7 @@ h1 {
   cursor: pointer;
 }
 #shopco {
-  @media (min-width: 321px) {
-    margin-left: 8rem;
-  }
+  margin: auto;
 }
 #navsection {
   margin-top: 2rem;
@@ -64,14 +62,12 @@ h1 {
   padding-left: 40px;
   border-radius: 40px !important;
   border: none;
-  margin-left: -7rem;
   @media (max-width: 1025px) {
     width: 15rem;
   }
 }
 #account {
   visibility: hidden;
-  margin-left: -5rem;
 }
 #LoginButton {
   margin-right: 20px;

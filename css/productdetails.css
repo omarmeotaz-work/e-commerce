@@ -47,10 +47,8 @@ nav {
   cursor: pointer;
 }
 
-@media (min-width: 676px) {
-  #shopco {
-    margin-left: 10rem;
-  }
+#shopco {
+  margin: auto;
 }
 
 #navbarSupportedContent {

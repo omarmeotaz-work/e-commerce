@@ -39,10 +39,8 @@ h1 {
   cursor: pointer;
 }
 
-@media (min-width: 321px) {
-  #shopco {
-    margin-left: 8rem;
-  }
+#shopco {
+  margin: auto;
 }
 
 #navsection {
@@ -74,7 +72,6 @@ h1 {
   padding-left: 40px;
   border-radius: 40px !important;
   border: none;
-  margin-left: -7rem;
 }
 @media (max-width: 1025px) {
   #searchbar {
@@ -84,7 +81,6 @@ h1 {
 
 #account {
   visibility: hidden;
-  margin-left: -5rem;
 }
 
 #LoginButton {
