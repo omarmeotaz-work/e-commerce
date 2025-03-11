@@ -6,6 +6,9 @@
   font-family: "satoshi";
   src: url(/webfonts/Satoshi-Black.otf);
 }
+* {
+  overflow-x: hidden;
+}
 
 a {
   color: inherit;
@@ -365,6 +368,9 @@ h1 {
     display: none;
   }
 }
+.revholder {
+  overflow-x: hidden;
+}
 
 .revbox {
   border: 1px solid #ccc;
@@ -373,6 +379,7 @@ h1 {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 2rem;
+  max-width: 100%;
 }
 
 #checkmark {
