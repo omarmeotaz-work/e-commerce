@@ -17,68 +17,77 @@
 
 <body>
 
-    <div class="row">
-        <P id="offertext" class="col-12 text-light text-center position-relative">sign up and get 20% off
-            your
-            first
-            order. <a class="text-light" href="/pages/login.html"> Sign up
-                now</a><span class="position-absolute" id="close">X</span> </P>
+    <header>
+        <div>
+            <P id="offertext" class="col-12 text-light text-center position-relative">sign up and get 20% off
+                your
+                first
+                order. <a class="text-light" href="/pages/login.html"> Sign up
+                    now</a><span class="position-absolute" id="close">X</span> </P>
+        </div>
 
-        <nav class="navbar navbar-expand-lg" id="navsection">
-            <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid" id="shopco"></a>
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg" id="navsection">
+                <a class="navbar-brand" href="#"><img src="/imgs/SHOP.CO.png" class="img-fluid" id="shopco"></a>
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span></button>
 
 
-            <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
-                id="navbarSupportedContent">
-                <ul class="navbar-nav" id="navitems">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Shop
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                <div class="collapse navbar-collapse justify-content-around gap-3 fw-normal text-dark"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav" id="navitems">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">On Sale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">New Arrivals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Brands</a>
+                        </li>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input type="search" id="searchbar" class="rounded border border-none"
+                            placeholder="Search for products...">
+                    </form>
+                    <button id="LoginButton" class="btn btn-dark">Login</button>
+
+                    <div id="account" class="dropdown d-flex gap-3 align-items-center ">
+                        <i class="dropdown-toggle fa-regular fa-user btn " id="dropdownMenuButton" type="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item"><i class="fa-solid fa-cart-shopping dropdown-item"></i></a>
+                            <a class="dropdown-item"><button id="signoutButton"
+                                    class="btn btn-dark dropdown-item">signout</button></a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">On Sale</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">New Arrivals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Brands</a>
-                    </li>
-                </ul>
-
-                <form class="form-inline my-2 my-lg-0">
-                    <input type="search" id="searchbar" class="rounded border border-none"
-                        placeholder="Search for products...">
-                </form>
-                <button id="LoginButton" class="btn btn-dark">Login</button>
-
-                <div id="account" class="dropdown d-flex gap-3 align-items-center ">
-                    <i class="dropdown-toggle fa-regular fa-user btn " id="dropdownMenuButton" type="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item"><i class="fa-solid fa-cart-shopping dropdown-item"></i></a>
-                        <a class="dropdown-item"><button id="signoutButton"
-                                class="btn btn-dark dropdown-item">signout</button></a>
                     </div>
+
                 </div>
+            </nav>
+        </div>
+    </header>
 
-            </div>
-        </nav>
 
-        <div id="home-container" class="col-12 position-relative mt-4">
+    <div class="row home-section">
+
+        <div id="home-container" class="position-relative mt-4">
             <div class="textbox d-flex flex-column">
                 <h1 id="mainText" class="fw-bold">FIND CLOTHES<br> THAT MATCHES<br> YOUR STYLE</h1>
                 <p id="homeDesc">Browse through our diverse range of meticulously crafted garments, designed<br> to
@@ -105,9 +114,16 @@
 
 
         </div>
+
         <div id="brands" class="text-light text-center">
         </div>
-        <div id="arrivals" class="col-12 mt-5 text-center">
+    </div>
+
+
+    <div id="arrivals" class="arrival-section mt-5 text-center">
+
+        <div class="container">
+
             <h1 id="arrivalHeader" class="fw-bold text-center mb-5">New Arrivals</h1>
             <div id="products1" class="text-center">
                 <div class="box">
@@ -169,7 +185,16 @@
             </div>
             <button id="viewAllButton" class="btn m-auto pe-5 ps-5">View All</button>
         </div>
-        <div id="topSelling" class="col-12 mt-5 text-center">
+
+
+
+    </div>
+
+
+    <div id="topSelling" class="topSelling-Section mt-5 text-center">
+
+        <div class="container">
+
             <h1 id="topsellingHeader" class="fw-bold text-center m-5 pt-5">Top Selling</h1>
             <div id="products2" class="text-center">
                 <div class="box">
@@ -230,47 +255,59 @@
                 </div>
             </div>
             <button id="viewAllButton" class="btn m-auto pe-5 ps-5">View All</button>
-        </div>
-        <div class="col-12">
-            <div id="categoryBox" class="categoryBox text-center m-5">
-                <h1 id="CategoryHeader" class="mt-5 pt-5 pb-5 fw-bold">Browse By Category</h1>
-                <div class="firstrow row -unstyled">
-                    <div id="catimg1" class="col-md-3">
-                        <a href="/pages/products.html">
-                            <h3 id="Categorytext" class="fw-bold">Casual</h3>
-                        </a>
-                    </div>
-                    <div id="catimg2" class="col-md-6">
-                        <a href="/pages/products.html">
-                            <h3 id="Categorytext" class="fw-bold">Casual</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="secondrow row">
-                    <div id="catimg3" class="col-md-6">
-                        <a href="/pages/products.html">
-                            <h3 id="Categorytext" class="fw-bold">Casual</h3>
-                        </a>
-                    </div>
-                    <div id="catimg4" class="col-md-3">
-                        <a href="/pages/products.html">
-                            <h3 id="Categorytext" class="fw-bold">Casual</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="reviewSection" class="col-12">
-            <div class="reviews ms-5">
-                <div class="revhead d-flex justify-content-between">
-                    <h1 id="reviewHeader" class="fw-bold mb-4">Our Happy Customers</h1>
 
+        </div>
+
+
+    </div>
+
+
+    <div class="category-section">
+        <div id="categoryBox" class="categoryBox text-center m-5">
+            <h1 id="CategoryHeader" class="mt-5 pt-5 pb-5 fw-bold">Browse By Category</h1>
+            <div class="firstrow row -unstyled">
+                <div id="catimg1" class="col-md-3">
+                    <a href="/pages/products.html">
+                        <h3 id="Categorytext" class="fw-bold">Casual</h3>
+                    </a>
                 </div>
-                <div id="revholder" class="revholder">
+                <div id="catimg2" class="col-md-6">
+                    <a href="/pages/products.html">
+                        <h3 id="Categorytext" class="fw-bold">Casual</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="secondrow row">
+                <div id="catimg3" class="col-md-6">
+                    <a href="/pages/products.html">
+                        <h3 id="Categorytext" class="fw-bold">Casual</h3>
+                    </a>
+                </div>
+                <div id="catimg4" class="col-md-3">
+                    <a href="/pages/products.html">
+                        <h3 id="Categorytext" class="fw-bold">Casual</h3>
+                    </a>
                 </div>
             </div>
         </div>
-        <div id="footerSection" class="col-12 pt-5">
+    </div>
+
+
+    <div id="reviewSection" class="conatiner">
+
+        <div class="reviews ms-5">
+            <div class="revhead d-flex justify-content-between">
+                <h1 id="reviewHeader" class="fw-bold mb-4">Our Happy Customers</h1>
+
+            </div>
+            <div id="revholder" class="revholder">
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="footerSection" class="pt-5">
             <div id="subform" class="subscribe text-light p-5 d-flex justify-content-between">
                 <h1 class="col-md-6">STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS</h1>
                 <form id="subscribeForm" class="col-md-4 d-flex flex-column gap-3">
@@ -282,7 +319,8 @@
             <div id="footer" class="col-12 footer d-flex">
                 <div id="footer1" class="col-md-3 box">
                     <h1 class="fw-bold">SHOP.CO</h1>
-                    <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+                    <p>We have clothes that suits your style and which you’re proud to wear. From women to men.
+                    </p>
                     <div class="social gap-3 h4">
                         <i class="fa-brands fa-twitter"></i>
                         <i class="fa-brands fa-facebook"></i>
@@ -326,7 +364,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
+
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
