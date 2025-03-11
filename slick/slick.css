@@ -1,3 +1,8 @@
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
 /* Slider */
 .slick-slider {
   position: relative;

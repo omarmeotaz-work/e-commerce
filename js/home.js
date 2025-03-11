@@ -84,7 +84,9 @@ async function displayReviews() {
             <h5>${comment?.user?.username || "Anonymous"} 
                 <i id="checkmark" class="fa-solid fa-circle-check"></i>
             </h5>
+            <div>
             <p id="revText">${comment?.body || "No review text available."}</p>
+            <div>
         </div>`;
 
         revholder.append(reviewDev);
