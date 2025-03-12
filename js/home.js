@@ -46,10 +46,10 @@ async function displayProducts1() {
   }
   const data = await response.json();
   const productdata = data.products;
-  for (let i = 0; i <= productdata.length; i++) {
-    const ProductTitle = productdata[i].title;
-    const ProductPrice = productdata[i].price;
-    const Productimg = productdata[i].thumbnail;
+  for (let i = 0; i < productdata.length; i++) {
+    const ProductTitle = productdata[i]?.title;
+    const ProductPrice = productdata[i]?.price;
+    const Productimg = productdata[i]?.thumbnail;
 
     const products = `    <div class="box">
                     <img class="img-fluid" src=${Productimg}>
@@ -85,10 +85,10 @@ async function displayProducts2() {
   }
   const data = await response.json();
   const productdata = data.products;
-  for (let i = 0; i <= productdata.length; i++) {
-    const ProductTitle = productdata[i].title;
-    const ProductPrice = productdata[i].price;
-    const Productimg = productdata[i].thumbnail;
+  for (let i = 0; i < productdata.length; i++) {
+    const ProductTitle = productdata[i]?.title;
+    const ProductPrice = productdata[i]?.price;
+    const Productimg = productdata[i]?.thumbnail;
 
     const products = `    <div class="box">
                     <img class="img-fluid" src=${Productimg}>
@@ -152,14 +152,14 @@ async function displayReviews() {
       }
       revholder.slick({
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
-        centerMode: true, // Keep items centered
-        centerPadding: "0px", // Prevent extra spacing
-        variableWidth: false, // Prevents incorrect width calculations
+        centerMode: true,
+        centerPadding: "0px",
+        variableWidth: true,
         adaptiveHeight: true,
 
         responsive: [
@@ -194,7 +194,7 @@ async function displayReviews() {
 displayReviews();
 
 async function displayBrands() {
-  const brands = $("#brands"); // jQuery object
+  const brands = $("#brands");
   try {
     const response = await fetch("https://dummyjson.com/products/categories");
     if (!response.ok) {
@@ -205,7 +205,7 @@ async function displayBrands() {
     const data = await response.json();
 
     if (data && Array.isArray(data)) {
-      brands.empty(); // Clear previous content before appending new elements
+      brands.empty();
 
       // Append brand elements inside divs (required for Slick)
       for (let i = 0; i < data.length; i++) {
@@ -281,9 +281,8 @@ async function displayCategory() {
     return;
   }
   const data = await response.json();
-  console.log(data);
   for (let i = 0; i <= categroyText.length; i++) {
-    categroyText[i].textContent = data[i].name;
+    categroyText[i].textContent = data[i]?.name;
   }
 }
 

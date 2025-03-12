@@ -148,18 +148,34 @@ nav {
 #latest {
   border-radius: 40px;
 }
-@media (max-width: 426px) {
-  #latest {
-    display: none;
-  }
-}
 
 #write {
   border-radius: 40px;
 }
+
+@media (min-width: 1024px) {
+  #all-reviews {
+    margin-top: 3rem;
+    margin-left: 12rem;
+    left: 1rem;
+  }
+}
 @media (max-width: 426px) {
-  #write {
+  #all-reviews {
     display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  #writAndSort {
+    position: absolute;
+    right: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  #writAndSort {
+    position: relative;
+    text-align: center;
   }
 }
 
@@ -199,21 +215,13 @@ nav {
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: auto;
+  position: absolute;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  transform: translateX(-15%);
-}
-@media (max-width: 1024px) {
-  #loadbtn {
-    transform: translateX(-5%);
-  }
-}
-@media (max-width: 768px) {
-  #loadbtn {
-    transform: none;
-  }
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #alsolike {
@@ -222,10 +230,6 @@ nav {
 
 #detailsection {
   display: none;
-}
-
-#revheader {
-  display: flex;
 }
 
 #FAQsection {
@@ -277,7 +281,7 @@ nav {
          column-gap: 1rem;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #footer {
     flex-direction: column;
     text-align: center;
@@ -286,14 +290,16 @@ nav {
 #footer .social {
   display: flex;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #footer .social {
-    text-align: center;
-    display: block;
+    justify-content: center;
   }
 }
 
-@media (min-width: 768px) {
+#footer1 {
+  margin-right: 3rem;
+}
+@media (min-width: 1440px) {
   #footer1 {
     margin-left: 3rem;
   }

@@ -58,8 +58,6 @@ async function displayReviews() {
     const revbody = revtext[i].body;
     const revwriter = revtext[i].user.username;
 
-    console.log(revwriter);
-
     const reviews = `    <div id="revbox" class="revbox col-lg-5">
                     <div class="ratingholder d-flex justify-content-between">
                         <div id="rating" class="rating mb-1 d-flex">
@@ -84,7 +82,7 @@ displayReviews();
 async function displayProducts() {
   const prodholder = document.getElementById("productHolder");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=2&select=title,price,thumbnail"
+    "https://dummyjson.com/products?limit=4&skip=2&select=title,price,thumbnail,images,description"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -96,8 +94,21 @@ async function displayProducts() {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
     const ProductImg = productdata[i].thumbnail;
-    const products = `      <div class="col-lg-2">
-                    <img src=${ProductImg} class="img-fluid mb-2">
+    const prodimglist = productdata[i].images;
+    const prodDesc = productdata[i].description;
+
+    prodsideimg1 = prodimglist[0];
+    prodsideimg2 = prodimglist[1];
+    prodsideimg3 = prodimglist[2];
+    const products = `<div class="product col-lg-3" data-id="${i}" 
+                        data-title="${ProductTitle}" 
+                        data-price="${ProductPrice}" 
+                        data-img="${ProductImg}"
+                        data-sideimg1= "${prodsideimg1}"
+                        data-sideimg2= "${prodsideimg1}"
+                        data-sideimg3= "${prodsideimg1}"
+                        data-description= "${prodDesc}">
+                        <img src=${ProductImg} class="img-fluid mb-2">
                     <h5 id="productTitle" class="mb-3">${ProductTitle}</h5>
                     <div id="rating" class="rating d-flex justify-content-center">
                         <i class="fa-solid fa-star"></i>
@@ -109,13 +120,39 @@ async function displayProducts() {
                     </div>
                     <h5 id="price">$${ProductPrice}</h5>
                 </div>`;
+    console.log(products);
+
     prodholder.innerHTML += products;
-    // products[i].textContent = data.products[i].title;
-    // prices[i].textContent = data.products[i].price;
   }
 }
 
 displayProducts();
+
+//get productpage html
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", function saveprodinfo(event) {
+    let card = event.target.closest(".product");
+    if (!card) return; // Exit if not clicking a product card
+
+    const productId = card.getAttribute("data-id");
+    const productTitle = card.getAttribute("data-title");
+    const productPrice = card.getAttribute("data-price");
+    const productImg = card.getAttribute("data-img");
+    const productSideImg1 = card.getAttribute("data-sideimg1");
+    const productSideImg2 = card.getAttribute("data-sideimg2");
+    const productSideImg3 = card.getAttribute("data-sideimg3");
+    const productDesc = card.getAttribute("data-description");
+    window.localStorage.setItem("desc", productDesc);
+    window.location.href = `productdetails.html?id=${productId}&title=${encodeURIComponent(
+      productTitle
+    )}&price=${productPrice}&img=${encodeURIComponent(
+      productImg
+    )}&simg1=${encodeURIComponent(productSideImg1)}&simg2=${encodeURIComponent(
+      productSideImg2
+    )}&simg3=${encodeURIComponent(productSideImg3)}
+    )}`;
+  });
+});
 
 const detailTab = document.getElementById("detailTab");
 const detailsection = document.getElementById("detailsection");

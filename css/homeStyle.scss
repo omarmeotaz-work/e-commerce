@@ -434,20 +434,20 @@ h1 {
   @media (min-width: 769px) {
     column-gap: 2rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
   }
   .social {
     display: flex;
-    @media (max-width: 767px) {
-      text-align: center;
-      display: block;
+    @media (max-width: 768px) {
+      justify-content: center;
     }
   }
 }
 #footer1 {
-  @media (min-width: 768px) {
+  margin-right: 3rem;
+  @media (min-width: 1440px) {
     margin-left: 3rem;
   }
 }
@@ -471,5 +471,5 @@ h1 {
 }
 
 .slick-slide:not(.slick-active) {
-  filter: blur(2px);
+  filter: blur(1px);
 }

@@ -103,7 +103,6 @@ async function displayProducts() {
     return;
   }
   const data = await response.json();
-  console.log(data);
 
   const productdata = data.products;
 

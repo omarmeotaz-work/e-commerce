@@ -509,7 +509,7 @@ h1 {
          column-gap: 2rem;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #footer {
     flex-direction: column;
     text-align: center;
@@ -518,14 +518,16 @@ h1 {
 #footer .social {
   display: flex;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #footer .social {
-    text-align: center;
-    display: block;
+    justify-content: center;
   }
 }
 
-@media (min-width: 768px) {
+#footer1 {
+  margin-right: 3rem;
+}
+@media (min-width: 1440px) {
   #footer1 {
     margin-left: 3rem;
   }
@@ -554,5 +556,5 @@ h1 {
 }
 
 .slick-slide:not(.slick-active) {
-  filter: blur(2px);
+  filter: blur(1px);
 }/*# sourceMappingURL=homeStyle.css.map */

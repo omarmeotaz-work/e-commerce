@@ -99,9 +99,9 @@
                 <li id="faqTab" class="mb-3">FAQs</li>
             </ul>
         </div>
-        <div id="revheader" class="col-12 justify-content-between">
-            <h5 class="m-5">All Reviews <small>(451)</small></h5>
-            <div class="col-3 m-5">
+        <div id="revheader" class="row container m-auto align-items-center mb-5 position-relative">
+            <h5 id="all-reviews" class="col-lg-7">All Reviews <small>(451)</small></h5>
+            <div id="writAndSort" class="col-lg-3">
                 <img src="/imgs/filters.png" class="img-fluid>">
                 <button id="latest" class="border border-none ms-3 me-2 ps-3 pe-3 pt-2 pb-2">Latest &#11167</button>
                 <button id="write" class="btn btn-dark ps-4 pe-4 pt-2 pb-2">Write a Review</button>
@@ -109,39 +109,33 @@
 
         </div>
 
+        <div class="container">
 
-
-        <div id="reviewssection" class="row container">
-            <div class="revholder row" id="revHolder">
-
-
+            <div id="reviewssection" class="container">
+                <div class="revholder row" id="revHolder">
+                </div>
+                <button id="loadbtn" class="btn btn-light">Load More Reviews</button>
             </div>
 
-            <button id="loadbtn" class="btn btn-light">Load More Reviews</button>
-        </div>
-
-        <div id="detailsection" class="row container">
-            <div class="col-12 m-auto text-center">
-                <h3>Product Description:</h3>
-                <p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea reprehenderit sint
-                    minima
-                    natus tenetur
-                    recusandae distinctio, culpa sequi ex perferendis beatae quae nam enim incidunt quibusdam
-                    accusantium
-                    harum neque voluptate.</p>
+            <div id="detailsection" class="row container">
+                <div class="col-12 m-auto text-center">
+                    <h3>Product Description:</h3>
+                    <p id="description"></p>
+                </div>
             </div>
-        </div>
 
-        <div id="FAQsection" class="row container">
-            <div class="col-12 m-auto text-center">
-                <h3>Frequently asked question:</h3>
-                <p>Q1: Adipisci tenetur quidem voluptate. Aspernatur sit debitis voluptate amet, quasi a
-                    alias veniam eos repellat?</p>
-                <p>A1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque voluptate tenetur corporis,
-                    repellendus minima et doloribus. Odit illum excepturi quod consectetur commodi voluptatibus
-                    consequuntur
-                    quia porro tempora dolorum. Quibusdam, expedita?</p>
+            <div id="FAQsection" class="row container">
+                <div class="col-12 m-auto text-center">
+                    <h3>Frequently asked question:</h3>
+                    <p>Q1: Adipisci tenetur quidem voluptate. Aspernatur sit debitis voluptate amet, quasi a
+                        alias veniam eos repellat?</p>
+                    <p>A1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque voluptate tenetur corporis,
+                        repellendus minima et doloribus. Odit illum excepturi quod consectetur commodi voluptatibus
+                        consequuntur
+                        quia porro tempora dolorum. Quibusdam, expedita?</p>
+                </div>
             </div>
+
         </div>
 
 
@@ -149,9 +143,9 @@
 
 
 
-    <div class="alsoLike-Section">
+    <div class="alsoLike-Section mt-5 mb-3">
         <div class="row container">
-            <h1 id="alsolike" class="fw-bold text-center mt-5">You Might Also Like</h1>
+            <h1 id="alsolike" class="fw-bold text-center mt-5 mb-3">You Might Also Like</h1>
             <div class="row justify-content-center text-center" id="productHolder">
 
 
@@ -174,7 +168,7 @@
             </div>
 
             <div id="footer" class="row footer">
-                <div id="footer1" class="col-md-3 box">
+                <div id="footer1" class="col-lg-2 box">
                     <h1 class="fw-bold">SHOP.CO</h1>
                     <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
                     <div class="social gap-3 h4">
@@ -184,28 +178,28 @@
                         <i class="fa-brands fa-github"></i>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-2">
                     <h4>Company</h4>
                     <p>About</p>
                     <p>Features</p>
                     <p>Works</p>
                     <p>Career</p>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-2">
                     <h4>Help</h4>
                     <p>Customer Support</p>
                     <p>Delivery Details</p>
                     <p>Terms and Conditions</p>
                     <p>Privacy Policy</p>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-2">
                     <h4>FAQ</h4>
                     <p>Account</p>
                     <p>Manage Deliveries</p>
                     <p>Orders</p>
                     <p>Payments</p>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-2">
                     <h4>Resources</h4>
                     <p>Free e-Books</p>
                     <p>Development Tutorials</p>
