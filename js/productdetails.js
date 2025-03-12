@@ -120,7 +120,6 @@ async function displayProducts() {
                     </div>
                     <h5 id="price">$${ProductPrice}</h5>
                 </div>`;
-    console.log(products);
 
     prodholder.innerHTML += products;
   }
