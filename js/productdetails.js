@@ -6,6 +6,7 @@ const accessToken = JSON.parse(localStorage.getItem("token"));
 const homelogo = document.getElementById("shopco");
 const closeoffer = document.getElementById("close");
 const offer = document.getElementById("offertext");
+const productDesc = window.localStorage.getItem("desc");
 
 closeoffer.addEventListener("click", function () {
   offer.style.display = "none";
@@ -152,7 +153,7 @@ async function displaydetail() {
     return;
   }
   const data = await response.json();
-  description.textContent = data.description;
+  description.textContent = productDesc;
 }
 
 displaydetail();
