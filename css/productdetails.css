@@ -102,9 +102,6 @@ nav {
 #mainImg {
   margin-bottom: 1rem;
 }
-#mainImg img {
-  height: -webkit-fill-available;
-}
 
 @media (min-width: 769px) {
   #sizes {

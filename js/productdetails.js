@@ -83,7 +83,7 @@ displayReviews();
 async function displayProducts() {
   const prodholder = document.getElementById("productHolder");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=2&select=title,price"
+    "https://dummyjson.com/products?limit=4&skip=2&select=title,price,thumbnail"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -94,8 +94,9 @@ async function displayProducts() {
   for (let i = 0; i <= productdata.length; i++) {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
+    const ProductImg = productdata[i].thumbnail;
     const products = `      <div class="col-lg-2">
-                    <img src="/imgs/np-0.png" class="img-fluid mb-2">
+                    <img src=${ProductImg} class="img-fluid mb-2">
                     <h5 id="productTitle" class="mb-3">${ProductTitle}</h5>
                     <div id="rating" class="rating d-flex justify-content-center">
                         <i class="fa-solid fa-star"></i>
@@ -161,11 +162,59 @@ document.addEventListener("DOMContentLoaded", function () {
   const productTitle = urlParams.get("title");
   const productPrice = urlParams.get("price");
   const productImg = urlParams.get("img");
+  const productsideImg1 = urlParams.get("simg1");
+  const productsideImg2 = urlParams.get("simg2");
+  const productsideImg3 = urlParams.get("simg3");
+  const productDesc = window.localStorage.getItem("desc");
 
   if (productTitle) {
-    document.getElementById("product-name").textContent = productTitle;
-    document.getElementById("price").textContent = `$${productPrice}`;
-    document.getElementById("product-image").src = productImg;
-    document.getElementById("product-image").alt = productTitle;
+    const productDetails = `       <div class="prodinfo row">
+                <div id="sideImgs" class="col-2 ms-5">
+                    <img src=${productsideImg1} class="img-fluid">
+                    <img src=${productsideImg2} class="img-fluid">
+                    <img src=${productsideImg3} class="img-fluid">
+                </div>
+                <div id="mainImg" class="col-lg-3 col-6">
+                    <img id="product-image" src=${productImg} class="img-fluid">
+                </div>
+                <div class="col-lg-6">
+                    <h1 id="product-name" class="fw-bold">${productTitle}</h1>
+                    <div id="rating" class="rating mb-1 d-flex">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p class="text-dark ms-3">4.5/5</p>
+                    </div>
+                    <h2 id="price" class="fw-bold">$${productPrice}</h2>
+                    <p>${productDesc}.</p>
+                    <p>Select Colors</p>
+                    <img src="/imgs/colors2.png" class="img-fluid">
+                    <p>Choose Size</p>
+                    <ul id="sizes" class="list-unstyled gap-3">
+                        <li>Small</li>
+                        <li>Medium</li>
+                        <li id="active">Large</li>
+                        <li>X-Large</li>
+                    </ul>
+                    <div class="row">
+                        <ul id="quantity"
+                            class="col-2 list-unstyled d-flex justify-content-between ps-2 pe-2 pt-1 pb-1 gap-3">
+                            <li>-</li>
+                            <li>1</li>
+                            <li>+</li>
+                        </ul>
+                        <button id="addtocart" class="btn btn-dark col-6 ms-5">Add to Cart</button>
+                    </div>
+                </div>
+            </div>`;
+
+    const prodcontainer = document.getElementById("prodContainer");
+    prodcontainer.innerHTML += productDetails;
+    // document.getElementById("product-name").textContent = productTitle;
+    // document.getElementById("price").textContent = `$${productPrice}`;
+    // document.getElementById("product-image").src = productImg;
+    // document.getElementById("product-image").alt = productTitle;
   }
 });

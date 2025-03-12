@@ -96,25 +96,37 @@ categoryList();
 async function displayProducts() {
   const productGrid = document.getElementById("product-grid");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=9&skip=10&select=title,price,thumbnail"
+    "https://dummyjson.com/products?limit=9&skip=10&select=title,price,thumbnail,images,description"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
     return;
   }
   const data = await response.json();
+  console.log(data);
+
   const productdata = data.products;
 
   for (let i = 0; i < productdata.length; i++) {
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
     const Productimg = productdata[i].thumbnail;
+    const prodimglist = productdata[i].images;
+    const prodDesc = productdata[i].description;
+
+    prodsideimg1 = prodimglist[0];
+    prodsideimg2 = prodimglist[1];
+    prodsideimg3 = prodimglist[2];
 
     const products = `
     <div class="card"   data-id="${i}" 
     data-title="${ProductTitle}" 
     data-price="${ProductPrice}" 
-    data-img="${Productimg}">
+    data-img="${Productimg}"
+    data-sideimg1= "${prodsideimg1}"
+    data-sideimg2= "${prodsideimg1}"
+    data-sideimg3= "${prodsideimg1}"
+    data-description= "${prodDesc}">
                         <img id ="prodIMG" src=${Productimg} class="img-fluid">
                         <p id="productTitle" class="fw-bold">${ProductTitle}</p>
                         <div id="rating" class="rating d-flex">
@@ -127,7 +139,6 @@ async function displayProducts() {
                         </div>
                         <p id="price">$ ${ProductPrice}</p>
                     </div>
-                     <small id ="cardID">${i}<small>
                     `;
 
     productGrid.innerHTML += products;
@@ -146,11 +157,24 @@ cat5.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
+  const productdata = data.products;
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
+  const images = document.querySelectorAll("#prodIMG");
+  const cards = document.querySelectorAll(".card");
+
   for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i].title;
+    products[i].textContent = data.products[i]?.title;
     prices[i].textContent = data.products[i].price;
+    images[i].src = data.products[i].thumbnail;
+    cards[i].dataset.title = data.products[i].title;
+    cards[i].dataset.price = data.products[i].price;
+    cards[i].dataset.img = data.products[i].thumbnail;
+    cards[i].dataset.sideimg1 = productdata[i].images[0];
+    cards[i].dataset.sideimg2 = productdata[i].images[0];
+    cards[i].dataset.sideimg3 = productdata[i].images[0];
+    let prodDesc = productdata[i].description;
+    cards[i].dataset.description = prodDesc;
   }
 });
 const cat4 = document.getElementById("cat4");
@@ -163,11 +187,24 @@ cat4.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
+  const productdata = data.products;
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
+  const images = document.querySelectorAll("#prodIMG");
+  const cards = document.querySelectorAll(".card");
+
   for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i].title;
+    products[i].textContent = data.products[i]?.title;
     prices[i].textContent = data.products[i].price;
+    images[i].src = data.products[i].thumbnail;
+    cards[i].dataset.title = data.products[i].title;
+    cards[i].dataset.price = data.products[i].price;
+    cards[i].dataset.img = data.products[i].thumbnail;
+    cards[i].dataset.sideimg1 = productdata[i].images[0];
+    cards[i].dataset.sideimg2 = productdata[i].images[0];
+    cards[i].dataset.sideimg3 = productdata[i].images[0];
+    let prodDesc = productdata[i].description;
+    cards[i].dataset.description = prodDesc;
   }
 });
 const cat3 = document.getElementById("cat3");
@@ -180,11 +217,24 @@ cat3.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
+  const productdata = data.products;
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
+  const images = document.querySelectorAll("#prodIMG");
+  const cards = document.querySelectorAll(".card");
+
   for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i].title;
+    products[i].textContent = data.products[i]?.title;
     prices[i].textContent = data.products[i].price;
+    images[i].src = data.products[i].thumbnail;
+    cards[i].dataset.title = data.products[i].title;
+    cards[i].dataset.price = data.products[i].price;
+    cards[i].dataset.img = data.products[i].thumbnail;
+    cards[i].dataset.sideimg1 = productdata[i].images[0];
+    cards[i].dataset.sideimg2 = productdata[i].images[0];
+    cards[i].dataset.sideimg3 = productdata[i].images[0];
+    let prodDesc = productdata[i].description;
+    cards[i].dataset.description = prodDesc;
   }
 });
 const cat2 = document.getElementById("cat2");
@@ -197,11 +247,24 @@ cat2.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
+  const productdata = data.products;
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
+  const images = document.querySelectorAll("#prodIMG");
+  const cards = document.querySelectorAll(".card");
+
   for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i].title;
+    products[i].textContent = data.products[i]?.title;
     prices[i].textContent = data.products[i].price;
+    images[i].src = data.products[i].thumbnail;
+    cards[i].dataset.title = data.products[i].title;
+    cards[i].dataset.price = data.products[i].price;
+    cards[i].dataset.img = data.products[i].thumbnail;
+    cards[i].dataset.sideimg1 = productdata[i].images[0];
+    cards[i].dataset.sideimg2 = productdata[i].images[0];
+    cards[i].dataset.sideimg3 = productdata[i].images[0];
+    let prodDesc = productdata[i].description;
+    cards[i].dataset.description = prodDesc;
   }
 });
 
@@ -215,17 +278,30 @@ cat1.addEventListener(`click`, async function displaycat() {
     return;
   }
   const data = await response.json();
+  const productdata = data.products;
   const products = document.querySelectorAll("#productTitle");
   const prices = document.querySelectorAll("#price");
+  const images = document.querySelectorAll("#prodIMG");
+  const cards = document.querySelectorAll(".card");
+
   for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i].title;
+    products[i].textContent = data.products[i]?.title;
     prices[i].textContent = data.products[i].price;
+    images[i].src = data.products[i].thumbnail;
+    cards[i].dataset.title = data.products[i].title;
+    cards[i].dataset.price = data.products[i].price;
+    cards[i].dataset.img = data.products[i].thumbnail;
+    cards[i].dataset.sideimg1 = productdata[i].images[0];
+    cards[i].dataset.sideimg2 = productdata[i].images[0];
+    cards[i].dataset.sideimg3 = productdata[i].images[0];
+    let prodDesc = productdata[i].description;
+    cards[i].dataset.description = prodDesc;
   }
 });
 
-//get prodictpage html
+//get productpage html
 document.addEventListener("DOMContentLoaded", function () {
-  document.body.addEventListener("click", function (event) {
+  document.body.addEventListener("click", function saveprodinfo(event) {
     let card = event.target.closest(".card");
     if (!card) return; // Exit if not clicking a product card
 
@@ -233,9 +309,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const productTitle = card.getAttribute("data-title");
     const productPrice = card.getAttribute("data-price");
     const productImg = card.getAttribute("data-img");
-
+    const productSideImg1 = card.getAttribute("data-sideimg1");
+    const productSideImg2 = card.getAttribute("data-sideimg2");
+    const productSideImg3 = card.getAttribute("data-sideimg3");
+    const productDesc = card.getAttribute("data-description");
+    window.localStorage.setItem("desc", productDesc);
     window.location.href = `productdetails.html?id=${productId}&title=${encodeURIComponent(
       productTitle
-    )}&price=${productPrice}&img=${encodeURIComponent(productImg)}`;
+    )}&price=${productPrice}&img=${encodeURIComponent(
+      productImg
+    )}&simg1=${encodeURIComponent(productSideImg1)}&simg2=${encodeURIComponent(
+      productSideImg2
+    )}&simg3=${encodeURIComponent(productSideImg3)}
+    )}`;
   });
 });
