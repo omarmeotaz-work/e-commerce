@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", async function (e) {
   if (productTitle) {
     const productDetails = `       <div class="prodinfo row">
                 <div id="sideImgs" class="col-lg-2 col-4">
-                <div class="container">
+                <div class="container" id="imgHolder">
                     <img src=${productsideImg1} class="img-fluid" alt="">
                     <img src=${productsideImg2} class="img-fluid" alt="">
                     <img src=${productsideImg3} class="img-fluid" alt="">
@@ -212,10 +212,16 @@ document.addEventListener("DOMContentLoaded", async function (e) {
 
     const prodcontainer = document.getElementById("prodContainer");
     prodcontainer.innerHTML += productDetails;
-    // document.getElementById("product-name").textContent = productTitle;
-    // document.getElementById("price").textContent = `$${productPrice}`;
-    // document.getElementById("product-image").src = productImg;
-    // document.getElementById("product-image").alt = productTitle;
+    const imgHolder = $("#imgHolder");
+    if (imgHolder.hasClass("slick-initialized")) {
+      imgHolder.slick("unslick");
+    }
+    imgHolder.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
   }
 });
 
