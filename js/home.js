@@ -34,7 +34,7 @@ isLoggedIN();
 async function displayProducts1() {
   const prodholder = document.getElementById("products1");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=2&select=title,price,thumbnail"
+    "https://dummyjson.com/products?limit=4&skip=2&select=id,title,price,thumbnail"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -43,11 +43,12 @@ async function displayProducts1() {
   const data = await response.json();
   const productdata = data.products;
   for (let i = 0; i < productdata.length; i++) {
+    const productID = productdata[i].id;
     const ProductTitle = productdata[i]?.title;
     const ProductPrice = productdata[i]?.price;
     const Productimg = productdata[i]?.thumbnail;
 
-    const products = `    <div class="box">
+    const products = `    <div class="box" data-id="${productID}">
                     <img class="img-fluid" src=${Productimg}>
                     <p id="pTitle" class="fw-bold mt-3 mb-1">${ProductTitle}</p>
                     <div id="rating" class="rating mb-1">
@@ -63,8 +64,6 @@ async function displayProducts1() {
                 </div>
 `;
     prodholder.innerHTML += products;
-    // products[i].textContent = data.products[i].title;
-    // prices[i].textContent = data.products[i].price;
   }
 }
 
@@ -73,7 +72,7 @@ displayProducts1();
 async function displayProducts2() {
   const prodholder2 = document.getElementById("products2");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=6&select=title,price,thumbnail"
+    "https://dummyjson.com/products?limit=4&skip=6&select=id,title,price,thumbnail"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -85,8 +84,9 @@ async function displayProducts2() {
     const ProductTitle = productdata[i]?.title;
     const ProductPrice = productdata[i]?.price;
     const Productimg = productdata[i]?.thumbnail;
+    const productID = productdata[i].id;
 
-    const products = `    <div class="box">
+    const products = `    <div class="box"  data-id="${productID}">
                     <img class="img-fluid" src=${Productimg}>
                     <p id="pTitle" class="fw-bold mt-3 mb-1">${ProductTitle}</p>
                     <div id="rating" class="rating mb-1">
@@ -284,11 +284,35 @@ async function displayCategory() {
 
 displayCategory();
 
-// productImgs1 = document.getElementById("products1");
-// productImgs1.addEventListener("click", function () {
-//   window.location.href = "http://127.0.0.1:5500/pages/products.html";
-// });
-// productImgs2 = document.getElementById("products2");
-// productImgs2.addEventListener("click", function () {
-//   window.location.href = "http://127.0.0.1:5500/pages/products.html";
-// });
+//get productpage html
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", async function saveprodinfo(event) {
+    let card = event.target.closest(".box");
+    if (!card) return; // Exit if not clicking a product card
+
+    const productId = card.getAttribute("data-id");
+
+    if (!productId) {
+      console.error("Product ID is missing!");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `https://dummyjson.com/products/${productId}`
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const product = await response.json();
+
+      window.localStorage.setItem("product", JSON.stringify(product));
+
+      window.location.href = `../pages/productdetails.html?id=${productId}`;
+    } catch (error) {
+      console.error("Error fetching product:", error);
+    }
+  });
+});

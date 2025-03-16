@@ -144,27 +144,38 @@ function displaydetailTab() {
 displaydetailTab();
 
 //display product details
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function (e) {
   const product = JSON.parse(localStorage.getItem("product"));
-  const urlParams = new URLSearchParams(window.location.search);
-  const productTitle = product.title;
-  const productPrice = product.price;
-  const productImg = product.thumbnail;
+  const productid = product.id;
+  const response = await fetch(`https://dummyjson.com/products/${productid}`);
+  if (!response.ok) {
+    console.error("There was an error:", res.statusText);
+    return;
+  }
+  const data = await response.json();
 
-  const productsideImg1 = product?.images[0];
-  const productsideImg2 = product?.images[1];
-  const productsideImg3 = product?.images[2];
-  const productDesc = product.description;
+  console.log(data);
+
+  const productTitle = data.title;
+  const productPrice = data.price;
+  const productImg = data.thumbnail;
+
+  const productsideImg1 = data?.images[0];
+  const productsideImg2 = data?.images[1];
+  const productsideImg3 = data?.images[2];
+  const productDesc = data?.description;
 
   if (productTitle) {
     const productDetails = `       <div class="prodinfo row">
-                <div id="sideImgs" class="col-2 ms-5">
+                <div id="sideImgs" class="col-lg-2 col-4">
+                <div class="container">
                     <img src=${productsideImg1} class="img-fluid" alt="">
                     <img src=${productsideImg2} class="img-fluid" alt="">
                     <img src=${productsideImg3} class="img-fluid" alt="">
+                    </div>
                 </div>
-                <div id="mainImg" class="col-lg-3 col-6">
-                    <img id="product-image" src=${productImg} class="img-fluid">
+                <div id="mainImg" class="col-lg-4 col-6">
+                    <img id="product-image" src=${productImg} class="">
                 </div>
                 <div class="col-lg-6">
                     <h1 id="product-name" class="fw-bold">${productTitle}</h1>

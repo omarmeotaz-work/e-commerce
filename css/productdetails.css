@@ -102,11 +102,16 @@ nav {
 }
 
 #mainImg {
-  background-color: #f0eeed;
-  border-radius: 20px;
   margin-bottom: 1rem;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+#product-image {
+  width: 100%;
+  height: 100%;
+  background-color: #f0eeed;
+  border-radius: 20px;
 }
 
 @media (min-width: 769px) {
@@ -147,8 +152,6 @@ nav {
   font-weight: bold;
   color: black;
   border-bottom: 2px solid black;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 #latest {
