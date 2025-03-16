@@ -97,10 +97,16 @@ nav {
 
 #sideImgs img {
   margin-bottom: 1rem;
+  background-color: #f0eeed;
+  border-radius: 20px;
 }
 
 #mainImg {
+  background-color: #f0eeed;
+  border-radius: 20px;
   margin-bottom: 1rem;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 @media (min-width: 769px) {
@@ -226,6 +232,11 @@ nav {
 
 #alsolike {
   font-size: 60px;
+}
+
+#productHolder img {
+  background-color: #f0eeed;
+  border-radius: 20px;
 }
 
 #detailsection {

@@ -3,20 +3,11 @@ const signoutButton = document.getElementById("signoutButton");
 const accountIcon = document.getElementById("account");
 const accountdropdown = document.getElementById("dropdownMenuButton");
 const accessToken = JSON.parse(localStorage.getItem("token"));
-const homelogo = document.getElementById("shopco");
 const closeoffer = document.getElementById("close");
 const offer = document.getElementById("offertext");
 
 closeoffer.addEventListener("click", function () {
   offer.style.display = "none";
-});
-
-homelogo.addEventListener("click", function () {
-  window.location.href = "http://127.0.0.1:5500/";
-});
-
-loginButton.addEventListener(`click`, function () {
-  window.location.href = "http://127.0.0.1:5500/pages/login.html";
 });
 
 signoutButton.addEventListener(`click`, function () {
@@ -96,7 +87,7 @@ categoryList();
 async function displayProducts() {
   const productGrid = document.getElementById("product-grid");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=9&skip=10&select=title,price,thumbnail,images,description"
+    "https://dummyjson.com/products?limit=9&skip=10&select=id,title,price,thumbnail,images,description"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -107,6 +98,7 @@ async function displayProducts() {
   const productdata = data.products;
 
   for (let i = 0; i < productdata.length; i++) {
+    const productID = productdata[i].id;
     const ProductTitle = productdata[i].title;
     const ProductPrice = productdata[i].price;
     const Productimg = productdata[i].thumbnail;
@@ -118,14 +110,7 @@ async function displayProducts() {
     prodsideimg3 = prodimglist[2];
 
     const products = `
-    <div class="card"   data-id="${i}" 
-    data-title="${ProductTitle}" 
-    data-price="${ProductPrice}" 
-    data-img="${Productimg}"
-    data-sideimg1= "${prodsideimg1}"
-    data-sideimg2= "${prodsideimg1}"
-    data-sideimg3= "${prodsideimg1}"
-    data-description= "${prodDesc}">
+    <div class="card"   data-id="${productID}">
                         <img id ="prodIMG" src=${Productimg} class="img-fluid">
                         <p id="productTitle" class="fw-bold">${ProductTitle}</p>
                         <div id="rating" class="rating d-flex">
@@ -146,180 +131,88 @@ async function displayProducts() {
 
 displayProducts();
 
-const cat5 = document.getElementById("cat5");
-cat5.addEventListener(`click`, async function displaycat() {
-  const response = await fetch(
-    "https://dummyjson.com/products/category/home-decoration"
-  );
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
-  const productdata = data.products;
-  const products = document.querySelectorAll("#productTitle");
-  const prices = document.querySelectorAll("#price");
-  const images = document.querySelectorAll("#prodIMG");
-  const cards = document.querySelectorAll(".card");
+//filter by categories
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", async function displaycat(event) {
+    const productGrid = document.getElementById("product-grid");
+    let cat = event.target.closest("#categorylist > li");
+    if (!cat) return; // Exit if not clicking a category
+    let catname = cat.textContent;
 
-  for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i]?.title;
-    prices[i].textContent = data.products[i].price;
-    images[i].src = data.products[i].thumbnail;
-    cards[i].dataset.title = data.products[i].title;
-    cards[i].dataset.price = data.products[i].price;
-    cards[i].dataset.img = data.products[i].thumbnail;
-    cards[i].dataset.sideimg1 = productdata[i].images[0];
-    cards[i].dataset.sideimg2 = productdata[i].images[0];
-    cards[i].dataset.sideimg3 = productdata[i].images[0];
-    let prodDesc = productdata[i].description;
-    cards[i].dataset.description = prodDesc;
-  }
-});
-const cat4 = document.getElementById("cat4");
-cat4.addEventListener(`click`, async function displaycat() {
-  const response = await fetch(
-    "https://dummyjson.com/products/category/groceries"
-  );
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
-  const productdata = data.products;
-  const products = document.querySelectorAll("#productTitle");
-  const prices = document.querySelectorAll("#price");
-  const images = document.querySelectorAll("#prodIMG");
-  const cards = document.querySelectorAll(".card");
+    const response = await fetch(
+      `https://dummyjson.com/products/category/${catname}`
+    );
+    if (!response.ok) {
+      console.error("There was an error:", res.statusText);
+      return;
+    }
 
-  for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i]?.title;
-    prices[i].textContent = data.products[i].price;
-    images[i].src = data.products[i].thumbnail;
-    cards[i].dataset.title = data.products[i].title;
-    cards[i].dataset.price = data.products[i].price;
-    cards[i].dataset.img = data.products[i].thumbnail;
-    cards[i].dataset.sideimg1 = productdata[i].images[0];
-    cards[i].dataset.sideimg2 = productdata[i].images[0];
-    cards[i].dataset.sideimg3 = productdata[i].images[0];
-    let prodDesc = productdata[i].description;
-    cards[i].dataset.description = prodDesc;
-  }
-});
-const cat3 = document.getElementById("cat3");
-cat3.addEventListener(`click`, async function displaycat() {
-  const response = await fetch(
-    "https://dummyjson.com/products/category/furniture"
-  );
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
-  const productdata = data.products;
-  const products = document.querySelectorAll("#productTitle");
-  const prices = document.querySelectorAll("#price");
-  const images = document.querySelectorAll("#prodIMG");
-  const cards = document.querySelectorAll(".card");
+    const data = await response.json();
+    const productdata = data.products;
+    productGrid.innerHTML = "";
 
-  for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i]?.title;
-    prices[i].textContent = data.products[i].price;
-    images[i].src = data.products[i].thumbnail;
-    cards[i].dataset.title = data.products[i].title;
-    cards[i].dataset.price = data.products[i].price;
-    cards[i].dataset.img = data.products[i].thumbnail;
-    cards[i].dataset.sideimg1 = productdata[i].images[0];
-    cards[i].dataset.sideimg2 = productdata[i].images[0];
-    cards[i].dataset.sideimg3 = productdata[i].images[0];
-    let prodDesc = productdata[i].description;
-    cards[i].dataset.description = prodDesc;
-  }
-});
-const cat2 = document.getElementById("cat2");
-cat2.addEventListener(`click`, async function displaycat() {
-  const response = await fetch(
-    "https://dummyjson.com/products/category/fragrances"
-  );
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
-  const productdata = data.products;
-  const products = document.querySelectorAll("#productTitle");
-  const prices = document.querySelectorAll("#price");
-  const images = document.querySelectorAll("#prodIMG");
-  const cards = document.querySelectorAll(".card");
+    for (let i = 0; i < productdata.length; i++) {
+      const productID = productdata[i].id;
+      const ProductTitle = productdata[i].title;
+      const ProductPrice = productdata[i].price;
+      const Productimg = productdata[i].thumbnail;
+      const prodimglist = productdata[i].images;
+      const prodDesc = productdata[i].description;
 
-  for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i]?.title;
-    prices[i].textContent = data.products[i].price;
-    images[i].src = data.products[i].thumbnail;
-    cards[i].dataset.title = data.products[i].title;
-    cards[i].dataset.price = data.products[i].price;
-    cards[i].dataset.img = data.products[i].thumbnail;
-    cards[i].dataset.sideimg1 = productdata[i].images[0];
-    cards[i].dataset.sideimg2 = productdata[i].images[0];
-    cards[i].dataset.sideimg3 = productdata[i].images[0];
-    let prodDesc = productdata[i].description;
-    cards[i].dataset.description = prodDesc;
-  }
-});
+      prodsideimg1 = prodimglist[0];
+      prodsideimg2 = prodimglist[1];
+      prodsideimg3 = prodimglist[2];
 
-const cat1 = document.getElementById("cat1");
-cat1.addEventListener(`click`, async function displaycat() {
-  const response = await fetch(
-    "https://dummyjson.com/products/category/beauty"
-  );
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
-  const productdata = data.products;
-  const products = document.querySelectorAll("#productTitle");
-  const prices = document.querySelectorAll("#price");
-  const images = document.querySelectorAll("#prodIMG");
-  const cards = document.querySelectorAll(".card");
+      const products = `
+      <div class="card"   data-id="${productID}">
+                          <img id ="prodIMG" src=${Productimg} class="img-fluid">
+                          <p id="productTitle" class="fw-bold">${ProductTitle}</p>
+                          <div id="rating" class="rating d-flex">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <p class="text-dark ms-3">4.5/5</p>
+                          </div>
+                          <p id="price">$ ${ProductPrice}</p>
+                      </div>
+                      `;
 
-  for (let i = 0; i <= products.length; i++) {
-    products[i].textContent = data.products[i]?.title;
-    prices[i].textContent = data.products[i].price;
-    images[i].src = data.products[i].thumbnail;
-    cards[i].dataset.title = data.products[i].title;
-    cards[i].dataset.price = data.products[i].price;
-    cards[i].dataset.img = data.products[i].thumbnail;
-    cards[i].dataset.sideimg1 = productdata[i].images[0];
-    cards[i].dataset.sideimg2 = productdata[i].images[0];
-    cards[i].dataset.sideimg3 = productdata[i].images[0];
-    let prodDesc = productdata[i].description;
-    cards[i].dataset.description = prodDesc;
-  }
+      productGrid.innerHTML += products;
+    }
+  });
 });
 
 //get productpage html
 document.addEventListener("DOMContentLoaded", function () {
-  document.body.addEventListener("click", function saveprodinfo(event) {
+  document.body.addEventListener("click", async function saveprodinfo(event) {
     let card = event.target.closest(".card");
     if (!card) return; // Exit if not clicking a product card
 
     const productId = card.getAttribute("data-id");
-    const productTitle = card.getAttribute("data-title");
-    const productPrice = card.getAttribute("data-price");
-    const productImg = card.getAttribute("data-img");
-    const productSideImg1 = card.getAttribute("data-sideimg1");
-    const productSideImg2 = card.getAttribute("data-sideimg2");
-    const productSideImg3 = card.getAttribute("data-sideimg3");
-    const productDesc = card.getAttribute("data-description");
-    window.localStorage.setItem("desc", productDesc);
-    window.location.href = `productdetails.html?id=${productId}&title=${encodeURIComponent(
-      productTitle
-    )}&price=${productPrice}&img=${encodeURIComponent(
-      productImg
-    )}&simg1=${encodeURIComponent(productSideImg1)}&simg2=${encodeURIComponent(
-      productSideImg2
-    )}&simg3=${encodeURIComponent(productSideImg3)}
-    )}`;
+
+    if (!productId) {
+      console.error("Product ID is missing!");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `https://dummyjson.com/products/${productId}`
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const product = await response.json();
+
+      window.localStorage.setItem("product", JSON.stringify(product));
+
+      window.location.href = `productdetails.html?id=${productId}`;
+    } catch (error) {
+      console.error("Error fetching product:", error);
+    }
   });
 });

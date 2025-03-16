@@ -290,6 +290,10 @@ h1 {
 #products1 {
   cursor: pointer;
 }
+#products1 img {
+  background-color: #f0eeed;
+  border-radius: 20px;
+}
 @media (min-width: 1025px) {
   #products1 {
     display: flex;
@@ -324,6 +328,10 @@ h1 {
 
 #products2 {
   cursor: pointer;
+}
+#products2 img {
+  background-color: #f0eeed;
+  border-radius: 20px;
 }
 @media (min-width: 1025px) {
   #products2 {

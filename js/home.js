@@ -10,10 +10,6 @@ closeoffer.addEventListener("click", function () {
   offer.style.display = "none";
 });
 
-loginButton.addEventListener(`click`, function () {
-  window.location.href = "http://127.0.0.1:5500/pages/login.html";
-});
-
 signoutButton.addEventListener(`click`, function () {
   localStorage.removeItem("token");
   loginButton.style.display = "block";
@@ -288,11 +284,11 @@ async function displayCategory() {
 
 displayCategory();
 
-productImgs1 = document.getElementById("products1");
-productImgs1.addEventListener("click", function () {
-  window.location.href = "http://127.0.0.1:5500/pages/products.html";
-});
-productImgs2 = document.getElementById("products2");
-productImgs2.addEventListener("click", function () {
-  window.location.href = "http://127.0.0.1:5500/pages/products.html";
-});
+// productImgs1 = document.getElementById("products1");
+// productImgs1.addEventListener("click", function () {
+//   window.location.href = "http://127.0.0.1:5500/pages/products.html";
+// });
+// productImgs2 = document.getElementById("products2");
+// productImgs2.addEventListener("click", function () {
+//   window.location.href = "http://127.0.0.1:5500/pages/products.html";
+// });

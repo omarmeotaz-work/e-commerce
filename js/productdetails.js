@@ -3,21 +3,12 @@ const signoutButton = document.getElementById("signoutButton");
 const accountIcon = document.getElementById("account");
 const accountdropdown = document.getElementById("dropdownMenuButton");
 const accessToken = JSON.parse(localStorage.getItem("token"));
-const homelogo = document.getElementById("shopco");
 const closeoffer = document.getElementById("close");
 const offer = document.getElementById("offertext");
 const productDesc = window.localStorage.getItem("desc");
 
 closeoffer.addEventListener("click", function () {
   offer.style.display = "none";
-});
-
-homelogo.addEventListener("click", function () {
-  window.location.href = "http://127.0.0.1:5500/";
-});
-
-loginButton.addEventListener(`click`, function () {
-  window.location.href = "http://127.0.0.1:5500/pages/login.html";
 });
 
 signoutButton.addEventListener(`click`, function () {
@@ -53,12 +44,12 @@ async function displayReviews() {
   const data = await response.json();
 
   const reviewholder = document.getElementById("revHolder");
-  for (let i = 0; i <= data.comments.length; i++) {
+  for (let i = 0; i < data.comments.length; i++) {
     const revtext = data.comments;
-    const revbody = revtext[i].body;
-    const revwriter = revtext[i].user.username;
+    const revbody = revtext[i]?.body;
+    const revwriter = revtext[i]?.user.username;
 
-    const reviews = `    <div id="revbox" class="revbox col-lg-5">
+    const reviews = `<div id="revbox" class="revbox col-lg-5">
                     <div class="ratingholder d-flex justify-content-between">
                         <div id="rating" class="rating mb-1 d-flex">
                             <i class="fa-solid fa-star"></i>
@@ -82,7 +73,7 @@ displayReviews();
 async function displayProducts() {
   const prodholder = document.getElementById("productHolder");
   const response = await fetch(
-    "https://dummyjson.com/products?limit=4&skip=2&select=title,price,thumbnail,images,description"
+    "https://dummyjson.com/products?limit=4&skip=2&select=id,title,price,thumbnail,images,description"
   );
   if (!response.ok) {
     console.error("There was an error:", res.statusText);
@@ -90,24 +81,13 @@ async function displayProducts() {
   }
   const data = await response.json();
   const productdata = data.products;
-  for (let i = 0; i <= productdata.length; i++) {
-    const ProductTitle = productdata[i].title;
-    const ProductPrice = productdata[i].price;
-    const ProductImg = productdata[i].thumbnail;
-    const prodimglist = productdata[i].images;
-    const prodDesc = productdata[i].description;
+  for (let i = 0; i < productdata.length; i++) {
+    const productID = productdata[i]?.id;
+    const ProductTitle = productdata[i]?.title;
+    const ProductPrice = productdata[i]?.price;
+    const ProductImg = productdata[i]?.thumbnail;
 
-    prodsideimg1 = prodimglist[0];
-    prodsideimg2 = prodimglist[1];
-    prodsideimg3 = prodimglist[2];
-    const products = `<div class="product col-lg-3" data-id="${i}" 
-                        data-title="${ProductTitle}" 
-                        data-price="${ProductPrice}" 
-                        data-img="${ProductImg}"
-                        data-sideimg1= "${prodsideimg1}"
-                        data-sideimg2= "${prodsideimg1}"
-                        data-sideimg3= "${prodsideimg1}"
-                        data-description= "${prodDesc}">
+    const products = `<div class="product col-lg-3" data-id="${productID}"> 
                         <img src=${ProductImg} class="img-fluid mb-2">
                     <h5 id="productTitle" class="mb-3">${ProductTitle}</h5>
                     <div id="rating" class="rating d-flex justify-content-center">
@@ -126,32 +106,6 @@ async function displayProducts() {
 }
 
 displayProducts();
-
-//get productpage html
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.addEventListener("click", function saveprodinfo(event) {
-    let card = event.target.closest(".product");
-    if (!card) return; // Exit if not clicking a product card
-
-    const productId = card.getAttribute("data-id");
-    const productTitle = card.getAttribute("data-title");
-    const productPrice = card.getAttribute("data-price");
-    const productImg = card.getAttribute("data-img");
-    const productSideImg1 = card.getAttribute("data-sideimg1");
-    const productSideImg2 = card.getAttribute("data-sideimg2");
-    const productSideImg3 = card.getAttribute("data-sideimg3");
-    const productDesc = card.getAttribute("data-description");
-    window.localStorage.setItem("desc", productDesc);
-    window.location.href = `productdetails.html?id=${productId}&title=${encodeURIComponent(
-      productTitle
-    )}&price=${productPrice}&img=${encodeURIComponent(
-      productImg
-    )}&simg1=${encodeURIComponent(productSideImg1)}&simg2=${encodeURIComponent(
-      productSideImg2
-    )}&simg3=${encodeURIComponent(productSideImg3)}
-    )}`;
-  });
-});
 
 const detailTab = document.getElementById("detailTab");
 const detailsection = document.getElementById("detailsection");
@@ -181,35 +135,33 @@ faqTab.addEventListener(`click`, function () {
   FAQsection.style.display = "block";
 });
 
-async function displaydetail() {
-  const description = document.getElementById("description");
-  const response = await fetch("https://dummyjson.com/products/1");
-  if (!response.ok) {
-    console.error("There was an error:", res.statusText);
-    return;
-  }
-  const data = await response.json();
+function displaydetailTab() {
+  const product = JSON.parse(localStorage.getItem("product"));
+  const productDesc = product.description;
+
   description.textContent = productDesc;
 }
+displaydetailTab();
 
-displaydetail();
-
+//display product details
 document.addEventListener("DOMContentLoaded", function () {
+  const product = JSON.parse(localStorage.getItem("product"));
   const urlParams = new URLSearchParams(window.location.search);
-  const productTitle = urlParams.get("title");
-  const productPrice = urlParams.get("price");
-  const productImg = urlParams.get("img");
-  const productsideImg1 = urlParams.get("simg1");
-  const productsideImg2 = urlParams.get("simg2");
-  const productsideImg3 = urlParams.get("simg3");
-  const productDesc = window.localStorage.getItem("desc");
+  const productTitle = product.title;
+  const productPrice = product.price;
+  const productImg = product.thumbnail;
+
+  const productsideImg1 = product?.images[0];
+  const productsideImg2 = product?.images[1];
+  const productsideImg3 = product?.images[2];
+  const productDesc = product.description;
 
   if (productTitle) {
     const productDetails = `       <div class="prodinfo row">
                 <div id="sideImgs" class="col-2 ms-5">
-                    <img src=${productsideImg1} class="img-fluid">
-                    <img src=${productsideImg2} class="img-fluid">
-                    <img src=${productsideImg3} class="img-fluid">
+                    <img src=${productsideImg1} class="img-fluid" alt="">
+                    <img src=${productsideImg2} class="img-fluid" alt="">
+                    <img src=${productsideImg3} class="img-fluid" alt="">
                 </div>
                 <div id="mainImg" class="col-lg-3 col-6">
                     <img id="product-image" src=${productImg} class="img-fluid">
@@ -253,5 +205,35 @@ document.addEventListener("DOMContentLoaded", function () {
     // document.getElementById("price").textContent = `$${productPrice}`;
     // document.getElementById("product-image").src = productImg;
     // document.getElementById("product-image").alt = productTitle;
+  }
+});
+
+//get productpage html
+document.body.addEventListener("click", async function saveprodinfo(event) {
+  let card = event.target.closest(".product");
+  console.log(card);
+
+  if (!card) return; // Exit if not clicking a product card
+
+  const productId = card.getAttribute("data-id");
+
+  if (!productId) {
+    console.error("Product ID is missing!");
+    return;
+  }
+
+  try {
+    const response = await fetch(`https://dummyjson.com/products/${productId}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const product = await response.json();
+
+    window.localStorage.setItem("product", JSON.stringify(product));
+
+    window.location.href = `productdetails.html?id=${productId}`;
+  } catch (error) {
+    console.error("Error fetching product:", error);
   }
 });

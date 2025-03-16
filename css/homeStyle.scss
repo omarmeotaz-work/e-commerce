@@ -245,6 +245,10 @@ h1 {
   }
 }
 #products1 {
+  img {
+    background-color: #f0eeed;
+    border-radius: 20px;
+  }
   cursor: pointer;
 
   @media (min-width: 1025px) {
@@ -273,6 +277,10 @@ h1 {
   }
 }
 #products2 {
+  img {
+    background-color: #f0eeed;
+    border-radius: 20px;
+  }
   cursor: pointer;
   @media (min-width: 1025px) {
     display: flex;
