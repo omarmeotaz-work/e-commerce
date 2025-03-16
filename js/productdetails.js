@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", async function (e) {
   }
 });
 
-//get productpage html
+//go to productpage html
 document.body.addEventListener("click", async function saveprodinfo(event) {
   let card = event.target.closest(".product");
   console.log(card);
