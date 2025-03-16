@@ -170,7 +170,7 @@ detailTab.addEventListener(`click`, function () {
 });
 ratingTab.addEventListener(`click`, function () {
   detailsection.style.display = "none";
-  reviewssection.style.display = "flex";
+  reviewssection.style.display = "block";
   revheader.style.display = "flex";
   FAQsection.style.display = "none";
 });
